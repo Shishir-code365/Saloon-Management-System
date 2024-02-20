@@ -202,7 +202,7 @@ ul {
     flex-direction: column;
     gap: 35px;
     border-radius: 15px;
-    background: rgba(0, 0, 0, 0.359);
+    background: rgba(0, 0, 0, 0.534);
     
     border: 2px solid rgba(255, 255, 255, 0.199);
     backdrop-filter: blur(20px);
@@ -246,13 +246,13 @@ ul {
     border-radius: 8px;
   }
   .enteruser{
-    color: rgba(255, 0, 0, 0.51);
+    color: rgba(255, 0, 0, 0.82);
     font-size: 15px;
     display: none;
     
   }
   .enterpass{
-    color: rgba(255, 0, 0, 0.51);
+    color: rgba(255, 0, 0, 0.82);
     font-size: 15px;
     display: none;
   }
