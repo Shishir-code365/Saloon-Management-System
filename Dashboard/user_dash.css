@@ -1,81 +1,84 @@
-
 /* @import url(https://fonts.googleapis.com/css?family=Lato); */
-*{
-  margin: 0px;
-  padding: 0px;
-}
-body{
-  background-color: #c9c9c9;
-}
-.navbar{
- background-color:#ffffff;
+
+* {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  body {
+    
+    background-color: #c9c9c9;
+  
+  }
+  
+  .navbar {
+    background-color: #ffffff;
     /* background: rgb(113,0,0);
-background: radial-gradient(circle, rgba(113,0,0,1) 29%, rgba(0,0,0,1) 100%); */
+  background: radial-gradient(circle, rgba(113,0,0,1) 29%, rgba(0,0,0,1) 100%); */
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 70px;
     padding: 10px 43px;
     font-family: "Montserrat", sans-serif;
-  text-rendering: optimizeLegibility;
-  position: relative;
-  z-index: 1000;
-    
-}
-
-
-#img-logo{
-  width: 461px;
-  height: 82px;
-  margin-left: 80px;
-}
-
-ul {
-  display: flex;
-  flex-direction: row;
-  gap:32px;
-  font-size: 14px;
-  padding: 20px;
-  align-items: center;
-  list-style-type: none;
- 
-  li {
-    a {
-      position: relative;
-      display: block;
-      font-family: Lato, sans-serif;
-      color: #000000;
-      text-decoration: none;
-      text-transform: uppercase;
-      transition: 0.25s;
-
-      &::after {
-        position: absolute;
-        content: "";
-        top: 100%;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        /* background: #34db37; */
-        background: #FFD700;
-        transform: scaleX(0);
-        transform-origin: right;
-        transition: transform 0.25s;
-      }
-
-      &:hover {
-        color: #00000096;
-      }
-
-      &:hover::after {
-        transform: scaleX(1);
-        transform-origin: left;
+    text-rendering: optimizeLegibility;
+   
+  
+  }
+  
+  
+  #img-logo {
+    width: 461px;
+    height: 82px;
+  }
+  
+  ul {
+    display: flex;
+    flex-direction: row;
+    gap:32px;
+    font-size: 14px;
+    padding: 20px;
+    align-items: center;
+    list-style-type: none;
+   
+  
+    li {
+      a {
+        position: relative;
+        display: block;
+        font-family: Lato, sans-serif;
+        color: #000000;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: 0.25s;
+  
+        &::after {
+          position: absolute;
+          content: "";
+          top: 100%;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          /* background: #34db37; */
+          background: #FFD700;
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform 0.25s;
+        }
+  
+        &:hover {
+          color: #00000096;
+        }
+  
+        &:hover::after {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
       }
     }
   }
-}
-
-
+  
+  
   .Btn {
     display: flex;
     align-items: center;
@@ -89,11 +92,13 @@ ul {
     overflow: hidden;
     transition-duration: .3s;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-    background-color: rgb(94, 182, 237);
+    background-color: #ff0000;
   }
-  .Btn2{
+  
+  .Btn2 {
     background-color: orange;
   }
+  
   /* plus sign */
   .sign {
     width: 100%;
@@ -110,6 +115,7 @@ ul {
   .sign svg path {
     fill: white;
   }
+  
   /* text */
   .text {
     position: absolute;
@@ -121,21 +127,25 @@ ul {
     font-weight: 600;
     transition-duration: .3s;
   }
+  
   /* hover effect on button width */
   .Btn:hover {
-    width: 120px; 
+    width: 120px;
     border-radius: 40px;
     transition-duration: .3s;
-    
+  
   }
-  .Btn2:hover{
+  
+  .Btn2:hover {
     width: 130px;
   }
+  
   .Btn:hover .sign {
     width: 0%;
     transition-duration: .5s;
-
+  
   }
+  
   /* hover effect button's text */
   .Btn:hover .text {
     opacity: 1;
@@ -144,35 +154,41 @@ ul {
     text-align: center;
     padding-right: 15px;
   }
+  
   /* button click effect*/
   .Btn:active {
-    transform: translate(2px ,2px);
+    transform: translate(2px, 2px);
   }
-.log-sign{
-  display: flex;
-  gap: 10px;
-  width: 250px;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
+  
+  .log-sign {
+    display: flex;
+    gap: 10px;
+    width: 250px;
+    justify-content: center;
   }
-}
-
-@keyframes blink-caret {
-  50% {
-    border-color: transparent;
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
   }
-}
-.image-part{
-  width: 100%;
-  height: 1040px;
-  position: relative;
- 
-}
-
-.singup {
+  
+  @keyframes blink-caret {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  .image-part {
+    width: 100%;
+    height: 1040px;
+    position: relative;
+  
+  }
+  
+  /* LOGIN PART */
+  
+  .login {
     color: #ffffff;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -181,7 +197,12 @@ ul {
     font-size: x-large;
     margin-top: 1.5em;
   }
-  .container2{
+  
+  
+  .container {
+    /* padding: 50px; */
+    /* background: linear-gradient(rgba(36, 39, 38, 0.5), rgba(36, 39, 38, 0.5)),
+    rgba(36, 39, 38, 0.5); */
     height: 100vh;
     background-repeat: no-repeat;
     background-position: center;
@@ -193,9 +214,10 @@ ul {
     background-image: url(../Images/Salon3\ \(1\).jpg);
     background-size:cover;
     width: 100%;
+  
   }
   
-  .card2 {
+  .card {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -205,16 +227,19 @@ ul {
     gap: 35px;
     border-radius: 15px;
     background: rgba(0, 0, 0, 0.33);
+   
     border: 2px solid rgba(255, 255, 255, 0.199);
     backdrop-filter: blur(20px);
     border-radius: 8px;
   }
-  .inputBox2{
+  
+  
+  .inputBox {
     position: relative;
     width: 250px;
   }
   
-  .inputBox2 input {
+  .inputBox input {
     width: 100%;
     padding: 7px;
     outline: none;
@@ -228,7 +253,7 @@ ul {
     border-bottom-left-radius: 8px;
   }
   
-  .inputBox2 span{
+  .inputBox span {
     margin-top: 8px;
     position: absolute;
     left: 0;
@@ -237,16 +262,17 @@ ul {
     padding: 10px;
     pointer-events: none;
     font-size: 12px;
-    color: #ffffff;
+    color: #fffcfc;
     text-transform: uppercase;
     transition: 0.5s;
     letter-spacing: 3px;
     border-radius: 8px;
   }
-
   
-  .inputBox2 input:valid~span,
-  .inputBox2 input:focus~span {
+  
+  
+  .inputBox input:valid~span,
+  .inputBox input:focus~span {
     transform: translateX(113px) translateY(-15px);
     font-size: 0.8em;
     padding: 5px 10px;
@@ -256,13 +282,13 @@ ul {
     border: 2px;
   }
   
-  .inputBox2 input:valid,
-  .inputBox2 input:focus {
+  .inputBox input:valid,
+  .inputBox input:focus {
     border: 2px solid #ffffff;
     border-radius: 8px;
   }
   
-  .enter2 {
+  .enter {
     height: 45px;
     width: 100px;
     border-radius: 5px;
@@ -276,57 +302,66 @@ ul {
     margin-bottom: 3em;
   }
   
-  .enter2:hover {
+  .enter:hover {
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
   }
-  .enteruser2{
-    color: rgb(193, 18, 18);
+  .enteruser {
+    color: rgb(162, 0, 0);
     font-size: 15px;
     display: none;
-    
+  
   }
-  .enterpass2{
-    color: rgb(193, 18, 18);
+  
+  .enterpass {
+    color: rgb(162, 0, 0);
     font-size: 15px;
     display: none;
-  }
-  .repassmatch{
-    color: rgb(193, 18, 18);
-    font-size: 15px;
-    display: none;
-  }
-  .enterrepass2{
-    color: rgb(193, 18, 18);
-    font-size: 15px;
-    display: none;
-  }
-  .enteremail{
-    color: rgb(193, 18, 18);
-       font-size: 15px;
-    display: none;
-  }
-  .enterphone{
-    color: rgb(193, 18, 18);
-        font-size: 15px;
-    display: none;
-  }
-  .numberformat{
-    color: rgb(193, 18, 18);
-    font-size: 15px;
-    display: none;
-    padding: 0px 48px;
-  }
-  .validemail{
-    color: rgb(193, 18, 18);
-    font-size: 15px;
-    display: none;
-    
   }
   .error_message{
-    color: rgb(193, 18, 18);
-    font-size: 15px;
-    padding: 0px 48px;
-    /* display: none; */
+      color: rgb(162, 0, 0);
+      font-size: 15px;
+      /* display: none; */
+  }
+.text a{ text-decoration: none;
+color: white;
 }
+.text a:visited{ text-decoration: none;
+    color: white;
+    }
 
+  @media (max-width: 768px) {
+    ul {
+      flex-direction: column;
+    }
+  }
+  @media (max-width: 768px) {
+    #img-logo {
+      width: 200px;
+      height: 36px;
+      margin-left: 0px;
+    }
+  }
+  @media (max-width: 768px) {
+    .inputBox input {
+      padding: 12px;
+      font-size: 1.2em;
+    }
+  
+    .enter {
+      height: 50px;
+      width: 150px;
+      font-size: 1.2em;
+      margin-bottom: 2em;
+    }
+  }
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 90%;
+    }
+  }

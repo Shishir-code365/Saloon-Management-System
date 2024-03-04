@@ -1,56 +1,62 @@
 
-@import url(https://fonts.googleapis.com/css?family=Lato);
+/* @import url(https://fonts.googleapis.com/css?family=Lato); */
 *{
   margin: 0px;
   padding: 0px;
 }
 body{
-  background-image: url("./Images/Salon2 (1).jpg");
+  /* background-image: url("./Images/barber.jpg");    */
   /* background-size: 118% 118%; */
   background-size:cover;
   background-repeat: no-repeat;
   background-color: #c9c9c9;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   gap: 0px;
 }
 .navbar{
-    background-color:#000000a0;
+
+  
+    background-color:#ffffff;
     /* background: rgb(113,0,0);
 background: radial-gradient(circle, rgba(113,0,0,1) 29%, rgba(0,0,0,1) 100%); */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 77px;
-    width: 100%;
-    padding: 0 25px;
-    font-size: 17px;
+    height: 70px;
+    /* width: 100%; */
+    padding: 10px 43px;
+
+    /* font-size: 17px; */
+    font-family: "Montserrat", sans-serif;
+  text-rendering: optimizeLegibility;
     
 }
 
 
 #img-logo{
-  width: 205px;
-  height: 32px;
-  margin-left: 50px;
+  width: 461px;
+  height: 82px;
+  margin-left: 80px;
 }
 
 ul {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap:32px;
+  font-size: 14px;
+  padding: 20px;
   align-items: center;
   list-style-type: none;
  
-
   li {
-    padding: 6px 0;
+    /* padding: 6px 0; */
 
     a {
       position: relative;
       display: block;
-      padding: 4px 0;
+      /* padding: 4px 0; */
       font-family: Lato, sans-serif;
-      color: #ecf0f1;
+      color: #000000;
       text-decoration: none;
       text-transform: uppercase;
       transition: 0.25s;
@@ -70,7 +76,7 @@ ul {
       }
 
       &:hover {
-        color: #95a5a6;
+        color: #00000096;
       }
 
       &:hover::after {
@@ -171,9 +177,97 @@ ul {
     border-color: transparent;
   }
 }
-.image-part{
+.hero-section img{
   width: 100%;
   height: 1040px;
   position: relative;
- 
+}
+.hero-section {
+  padding-top: 235px;
+  padding-bottom: 195px;
+  background: linear-gradient(rgba(36, 39, 38, 0.5), rgba(36, 39, 38, 0.5)),
+    rgba(36, 39, 38, 0.5) url(./Images/Salon3\ \(1\).jpg) no-repeat center;
+  background-size: cover;
+}
+.hero-caption {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.hero-title {
+  display: inline-block;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+
+.hero-title {
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  overflow: hidden;
+  letter-spacing: 2px;
+  animation: typing 1.3s steps(30, end), blink 0.75s step-end infinite;
+  
+  white-space: nowrap;
+  font-size: 30px;
+  font-weight: 700;
+  border-right: 2px solid rgb(255, 255, 255);
+  box-sizing: border-box;
+}
+
+@keyframes typing {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 60%;
+  }
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(255, 70, 156);
+  }
+}
+
+.hero-text {
+  font-size: 20px;
+  margin-bottom: 12px;
+  font-style: italic;
+  color: #ff0073;
+}
+.hero-text2 {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+@import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
+#container {
+  position: absolute;
+  margin: auto;
+  width: 100vw;
+  height: 80pt;
+  top: 0;
+  bottom: 0;
+  filter: url(#threshold) blur(0.6px);
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+  color: #18150d;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-size: 32px;
+  line-height: 42px;
+  font-weight: bold;
+  color: #464646;
 }

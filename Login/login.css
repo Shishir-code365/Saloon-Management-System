@@ -1,52 +1,54 @@
-@import url(https://fonts.googleapis.com/css?family=Lato);
-*{
-    margin: 0px;
-    padding: 0px;
-}
-body{
-  background-image: url("../Images/Salon2 (1).jpg");
-  /* background-size: 118% 118%; */
-  background-size:cover;
-  overflow-x: hidden;
-}
-.navbar{
-    background-color:#000000a0;
-    /* background: rgb(113,0,0);
-background: radial-gradient(circle, rgba(113,0,0,1) 29%, rgba(0,0,0,1) 100%); */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 77px;
-    width: 100%;
-    padding: 0 25px;
-    font-size: 17px;
-    
+/* @import url(https://fonts.googleapis.com/css?family=Lato); */
+
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
-
-#img-logo{
-  width: 205px;
-  height: 32px;
+body {
   
+  background-color: #c9c9c9;
+
+}
+
+.navbar {
+  background-color: #ffffff;
+  /* background: rgb(113,0,0);
+background: radial-gradient(circle, rgba(113,0,0,1) 29%, rgba(0,0,0,1) 100%); */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 10px 43px;
+  font-family: "Montserrat", sans-serif;
+  text-rendering: optimizeLegibility;
+ 
+
+}
+
+
+#img-logo {
+  width: 461px;
+  height: 82px;
+  margin-left: 80px;
 }
 
 ul {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap:32px;
+  font-size: 14px;
+  padding: 20px;
   align-items: center;
   list-style-type: none;
  
 
   li {
-    padding: 6px 0;
-
     a {
       position: relative;
       display: block;
-      padding: 4px 0;
       font-family: Lato, sans-serif;
-      color: #ecf0f1;
+      color: #000000;
       text-decoration: none;
       text-transform: uppercase;
       transition: 0.25s;
@@ -66,7 +68,7 @@ ul {
       }
 
       &:hover {
-        color: #95a5a6;
+        color: #00000096;
       }
 
       &:hover::after {
@@ -78,79 +80,88 @@ ul {
 }
 
 
-  .Btn {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 40px;
-    height: 40px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition-duration: .3s;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-    background-color: rgb(94, 182, 237);
-  }
-  .Btn2{
-    background-color: orange;
-  }
-  /* plus sign */
-  .sign {
-    width: 100%;
-    transition-duration: .3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .sign svg {
-    width: 17px;
-  }
-  
-  .sign svg path {
-    fill: white;
-  }
-  /* text */
-  .text {
-    position: absolute;
-    right: 0%;
-    width: 0%;
-    opacity: 0;
-    color: white;
-    font-size: 1.2em;
-    font-weight: 600;
-    transition-duration: .3s;
-  }
-  /* hover effect on button width */
-  .Btn:hover {
-    width: 120px; 
-    border-radius: 40px;
-    transition-duration: .3s;
-    
-  }
-  .Btn2:hover{
-    width: 130px;
-  }
-  .Btn:hover .sign {
-    width: 0%;
-    transition-duration: .5s;
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(94, 182, 237);
+}
 
-  }
-  /* hover effect button's text */
-  .Btn:hover .text {
-    opacity: 1;
-    width: 70%;
-    transition-duration: .3s;
-    text-align: center;
-    padding-right: 15px;
-  }
-  /* button click effect*/
-  .Btn:active {
-    transform: translate(2px ,2px);
-  }
-.log-sign{
+.Btn2 {
+  background-color: orange;
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign svg {
+  width: 17px;
+}
+
+.sign svg path {
+  fill: white;
+}
+
+/* text */
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition-duration: .3s;
+}
+
+/* hover effect on button width */
+.Btn:hover {
+  width: 120px;
+  border-radius: 40px;
+  transition-duration: .3s;
+
+}
+
+.Btn2:hover {
+  width: 130px;
+}
+
+.Btn:hover .sign {
+  width: 0%;
+  transition-duration: .5s;
+
+}
+
+/* hover effect button's text */
+.Btn:hover .text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .3s;
+  text-align: center;
+  padding-right: 15px;
+}
+
+/* button click effect*/
+.Btn:active {
+  transform: translate(2px, 2px);
+}
+
+.log-sign {
   display: flex;
   gap: 10px;
   width: 250px;
@@ -167,129 +178,183 @@ ul {
     border-color: transparent;
   }
 }
-.image-part{
+
+.image-part {
   width: 100%;
   height: 1040px;
   position: relative;
- 
+
 }
 
 /* LOGIN PART */
 
-.login{
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    display: block;
-    font-weight: bold;
-    font-size: x-large;
-    margin-top: 1.5em;
-  }
-  
-  
-  .container{
-    padding: 50px;
-    float: right;
-    font-family: Lato, sans-serif;
-    
-  }
-  .card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 450px;
-    width: 320px;
+.login {
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  font-weight: bold;
+  font-size: x-large;
+  margin-top: 1.5em;
+}
+
+
+.container {
+  /* padding: 50px; */
+  /* background: linear-gradient(rgba(36, 39, 38, 0.5), rgba(36, 39, 38, 0.5)),
+  rgba(36, 39, 38, 0.5); */
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  /* float: right; */
+  font-family: Lato, sans-serif;
+  background-image: url(../Images/Salon3\ \(1\).jpg);
+  background-size:cover;
+  width: 100%;
+
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 450px;
+  width: 350px;
+  flex-direction: column;
+  gap: 35px;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.33);
+ 
+  border: 2px solid rgba(255, 255, 255, 0.199);
+  backdrop-filter: blur(20px);
+  border-radius: 8px;
+}
+
+
+.inputBox {
+  position: relative;
+  width: 250px;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 7px;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1em;
+  background: transparent;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  transition: 0.1s;
+  border-bottom-left-radius: 8px;
+}
+
+.inputBox span {
+  margin-top: 8px;
+  position: absolute;
+  left: 0;
+  transform: translateY(-4px);
+  margin-left: 10px;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #fffcfc;
+  text-transform: uppercase;
+  transition: 0.5s;
+  letter-spacing: 3px;
+  border-radius: 8px;
+}
+
+
+
+.inputBox input:valid~span,
+.inputBox input:focus~span {
+  transform: translateX(113px) translateY(-15px);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  background: #ffffff;
+  letter-spacing: 0.2em;
+  color: #000000;
+  border: 2px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus {
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+}
+
+.enter {
+  height: 45px;
+  width: 100px;
+  border-radius: 5px;
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  background-color: white;
+  transition: 0.5s;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 3em;
+}
+
+.enter:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+}
+.enteruser {
+  color: rgb(162, 0, 0);
+  font-size: 15px;
+  display: none;
+
+}
+
+.enterpass {
+  color: rgb(162, 0, 0);
+  font-size: 15px;
+  display: none;
+}
+.error_message{
+    color: rgb(162, 0, 0);
+    font-size: 15px;
+    /* display: none; */
+}
+@media (max-width: 768px) {
+  ul {
     flex-direction: column;
-    gap: 35px;
-    border-radius: 15px;
-    background: rgba(0, 0, 0, 0.534);
-    
-    border: 2px solid rgba(255, 255, 255, 0.199);
-    backdrop-filter: blur(20px);
-    /* box-shadow: 16px 16px 32px #c8c8c8,
-          -16px -16px 32px #fefefe; */
-    border-radius: 8px;
   }
-  
-  .inputBox{
-    position: relative;
-    width: 250px;
+}
+@media (max-width: 768px) {
+  #img-logo {
+    width: 200px;
+    height: 36px;
+    margin-left: 0px;
   }
-  
+}
+@media (max-width: 768px) {
   .inputBox input {
-    width: 100%;
-    padding: 7px;
-    outline: none;
-    border: none;
-    color: #ffffff;
-    font-size: 1em;
-    background: transparent;
-    border-left: 2px solid #ffffff;
-    border-bottom: 2px solid #ffffff;
-    transition: 0.1s;
-    border-bottom-left-radius: 8px;
+    padding: 12px;
+    font-size: 1.2em;
   }
-  
-  .inputBox span{
-    margin-top: 8px;
-    position: absolute;
-    left: 0;
-    transform: translateY(-4px);
-    margin-left: 10px;
-    padding: 10px;
-    pointer-events: none;
-    font-size: 12px;
-    color: #fffcfc;
-    text-transform: uppercase;
-    transition: 0.5s;
-    letter-spacing: 3px;
-    border-radius: 8px;
-  }
-  .enteruser{
-    color: rgba(255, 0, 0, 0.82);
-    font-size: 15px;
-    display: none;
-    
-  }
-  .enterpass{
-    color: rgba(255, 0, 0, 0.82);
-    font-size: 15px;
-    display: none;
-  }
-  
-  .inputBox input:valid~span,
-  .inputBox input:focus~span {
-    transform: translateX(113px) translateY(-15px);
-    font-size: 0.8em;
-    padding: 5px 10px;
-    background: #ffffff;
-    letter-spacing: 0.2em;
-    color: #000000;  
-    border: 2px;
-  }
-  
-  .inputBox input:valid,
-  .inputBox input:focus {
-    border: 2px solid #ffffff;
-    border-radius: 8px;
-  }
-  
+
   .enter {
-    height: 45px;
-    width: 100px;
-    border-radius: 5px;
-    border: 2px solid #ffffff;
-    cursor: pointer;
-    background-color: transparent;
-    transition: 0.5s;
-    text-transform: uppercase;
-    font-size: 10px;
-    letter-spacing: 2px;
-    margin-bottom: 3em;
+    height: 50px;
+    width: 150px;
+    font-size: 1.2em;
+    margin-bottom: 2em;
   }
-  
-  .enter:hover {
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
   }
-  
+
+  .card {
+    width: 90%;
+  }
+}
