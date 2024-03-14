@@ -1,84 +1,93 @@
-/* @import url(https://fonts.googleapis.com/css?family=Lato); */
 
-* {
-    margin: 0px;
-    padding: 0px;
-  }
+/* @import url(https://fonts.googleapis.com/css?family=Lato); */
+*{
+  margin: 0px;
+  padding: 0px;
+}
+body{
+  /* background-image: url("./Images/barber.jpg");    */
+  /* background-size: 118% 118%; */
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-color: #c9c9c9;
+  /* overflow-x: hidden; */
+  gap: 0px;
+}
+.navbar{
+
   
-  body {
-    
-    background-color: #c9c9c9;
-  
-  }
-  
-  .navbar {
-    background-color: #ffffff;
+    background-color:#ffffff;
     /* background: rgb(113,0,0);
-  background: radial-gradient(circle, rgba(113,0,0,1) 29%, rgba(0,0,0,1) 100%); */
+background: radial-gradient(circle, rgba(113,0,0,1) 29%, rgba(0,0,0,1) 100%); */
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 70px;
+    /* width: 100%; */
     padding: 10px 43px;
+
+    /* font-size: 17px; */
     font-family: "Montserrat", sans-serif;
-    text-rendering: optimizeLegibility;
-   
+  text-rendering: optimizeLegibility;
+    
+}
+
+
+#img-logo{
+  width: 461px;
+  height: 82px;
   
-  }
-  
-  
-  #img-logo {
-    width: 461px;
-    height: 82px;
-  }
-  
-  ul {
-    display: flex;
-    flex-direction: row;
-    gap:32px;
-    font-size: 14px;
-    padding: 20px;
-    align-items: center;
-    list-style-type: none;
-   
-  
-    li {
-      a {
-        position: relative;
-        display: block;
-        font-family: Lato, sans-serif;
-        color: #000000;
-        text-decoration: none;
-        text-transform: uppercase;
-        transition: 0.25s;
-  
-        &::after {
-          position: absolute;
-          content: "";
-          top: 100%;
-          left: 0;
-          width: 100%;
-          height: 3px;
-          /* background: #34db37; */
-          background: #FFD700;
-          transform: scaleX(0);
-          transform-origin: right;
-          transition: transform 0.25s;
-        }
-  
-        &:hover {
-          color: #00000096;
-        }
-  
-        &:hover::after {
-          transform: scaleX(1);
-          transform-origin: left;
-        }
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  gap:32px;
+  font-size: 14px;
+  padding: 20px;
+  align-items: center;
+  list-style-type: none;
+ 
+  li {
+    /* padding: 6px 0; */
+
+    a {
+      position: relative;
+      display: block;
+      /* padding: 4px 0; */
+      font-family: Lato, sans-serif;
+      color: #000000;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: 0.25s;
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        /* background: #34db37; */
+        background: #FFD700;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.25s;
+      }
+
+      &:hover {
+        color: #00000096;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
       }
     }
   }
-  
-  
+}
+
+
   .Btn {
     display: flex;
     align-items: center;
@@ -92,13 +101,16 @@
     overflow: hidden;
     transition-duration: .3s;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-    background-color: #ff0000;
-  }
+    background-color: rgb(255, 0, 60);
   
-  .Btn2 {
-    background-color: orange;
   }
-  
+  .Btn a{
+    text-decoration: none;
+  }
+  .Btn a:visited{
+    color: white;
+  }
+ 
   /* plus sign */
   .sign {
     width: 100%;
@@ -115,7 +127,6 @@
   .sign svg path {
     fill: white;
   }
-  
   /* text */
   .text {
     position: absolute;
@@ -127,25 +138,21 @@
     font-weight: 600;
     transition-duration: .3s;
   }
-  
   /* hover effect on button width */
   .Btn:hover {
-    width: 120px;
+    width: 120px; 
     border-radius: 40px;
     transition-duration: .3s;
-  
+    
   }
-  
-  .Btn2:hover {
+  .Btn2:hover{
     width: 130px;
   }
-  
   .Btn:hover .sign {
     width: 0%;
     transition-duration: .5s;
-  
+
   }
-  
   /* hover effect button's text */
   .Btn:hover .text {
     opacity: 1;
@@ -154,214 +161,146 @@
     text-align: center;
     padding-right: 15px;
   }
-  
   /* button click effect*/
   .Btn:active {
-    transform: translate(2px, 2px);
+    transform: translate(2px ,2px);
   }
-  
-  .log-sign {
-    display: flex;
-    gap: 10px;
-    width: 250px;
-    justify-content: center;
-  }
-  
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-  }
-  
-  @keyframes blink-caret {
-    50% {
-      border-color: transparent;
-    }
-  }
-  
-  .image-part {
-    width: 100%;
-    height: 1040px;
-    position: relative;
-  
-  }
-  
-  /* LOGIN PART */
-  
-  .login {
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    display: block;
-    font-weight: bold;
-    font-size: x-large;
-    margin-top: 1.5em;
-  }
-  
-  
-  .container {
-    /* padding: 50px; */
-    /* background: linear-gradient(rgba(36, 39, 38, 0.5), rgba(36, 39, 38, 0.5)),
-    rgba(36, 39, 38, 0.5); */
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    /* float: right; */
-    font-family: Lato, sans-serif;
-    background-image: url(../Images/Salon3\ \(1\).jpg);
-    background-size:cover;
-    width: 100%;
-  
-  }
-  
-  .card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 450px;
-    width: 350px;
-    flex-direction: column;
-    gap: 35px;
-    border-radius: 15px;
-    background: rgba(0, 0, 0, 0.33);
-   
-    border: 2px solid rgba(255, 255, 255, 0.199);
-    backdrop-filter: blur(20px);
-    border-radius: 8px;
-  }
-  
-  
-  .inputBox {
-    position: relative;
-    width: 250px;
-  }
-  
-  .inputBox input {
-    width: 100%;
-    padding: 7px;
-    outline: none;
-    border: none;
-    color: #ffffff;
-    font-size: 1em;
-    background: transparent;
-    border-left: 2px solid #ffffff;
-    border-bottom: 2px solid #ffffff;
-    transition: 0.1s;
-    border-bottom-left-radius: 8px;
-  }
-  
-  .inputBox span {
-    margin-top: 8px;
-    position: absolute;
-    left: 0;
-    transform: translateY(-4px);
-    margin-left: 10px;
-    padding: 10px;
-    pointer-events: none;
-    font-size: 12px;
-    color: #fffcfc;
-    text-transform: uppercase;
-    transition: 0.5s;
-    letter-spacing: 3px;
-    border-radius: 8px;
-  }
-  
-  
-  
-  .inputBox input:valid~span,
-  .inputBox input:focus~span {
-    transform: translateX(113px) translateY(-15px);
-    font-size: 0.8em;
-    padding: 5px 10px;
-    background: #ffffff;
-    letter-spacing: 0.2em;
-    color: #000000;
-    border: 2px;
-  }
-  
-  .inputBox input:valid,
-  .inputBox input:focus {
-    border: 2px solid #ffffff;
-    border-radius: 8px;
-  }
-  
-  .enter {
-    height: 45px;
-    width: 100px;
-    border-radius: 5px;
-    border: 2px solid #ffffff;
-    cursor: pointer;
-    background-color: white;
-    transition: 0.5s;
-    text-transform: uppercase;
-    font-size: 10px;
-    letter-spacing: 2px;
-    margin-bottom: 3em;
-  }
-  
-  .enter:hover {
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-  }
-  .enteruser {
-    color: rgb(162, 0, 0);
-    font-size: 15px;
-    display: none;
-  
-  }
-  
-  .enterpass {
-    color: rgb(162, 0, 0);
-    font-size: 15px;
-    display: none;
-  }
-  .error_message{
-      color: rgb(162, 0, 0);
-      font-size: 15px;
-      /* display: none; */
-  }
-.text a{ text-decoration: none;
-color: white;
+.log-sign{
+  display: flex;
+  gap: 10px;
+  width: 250px;
+  justify-content: center;
 }
-.text a:visited{ text-decoration: none;
-    color: white;
-    }
 
-  @media (max-width: 768px) {
-    ul {
-      flex-direction: column;
-    }
+@keyframes typing {
+  from {
+    width: 0;
   }
-  @media (max-width: 768px) {
-    #img-logo {
-      width: 200px;
-      height: 36px;
-      margin-left: 0px;
-    }
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
   }
-  @media (max-width: 768px) {
-    .inputBox input {
-      padding: 12px;
-      font-size: 1.2em;
-    }
+}
+.hero-section img{
+  width: 100%;
+  /* height: 1040px; */
+  position: relative;
+}
+.hero-section {
+  padding-top: 130px;
+  padding-bottom: 180px;
+  height: 150px;
+  background: linear-gradient(rgba(36, 39, 38, 0.5), rgba(36, 39, 38, 0.5)),
+    rgba(36, 39, 38, 0.5) url(../Images/left-img.jpg) no-repeat center;
+  background-size: cover;
+}
+.hero-caption {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+/* .hero-title {
+  display: inline-block;
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+} */
+
+.hero-title {
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  overflow: hidden;
+  letter-spacing: 3px;
+  animation: typing 0.9s steps(13, end);
   
-    .enter {
-      height: 50px;
-      width: 150px;
-      font-size: 1.2em;
-      margin-bottom: 2em;
-    }
+  white-space: nowrap;
+  font-size: 32px;
+  /* border-right: 2px solid rgb(255, 255, 255); */
+  box-sizing: border-box;
+}
+
+@keyframes typing {
+  from {
+    width: 0%;
   }
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      align-items: center;
-    }
+  to {
+    width: 60%;
+  }
+}
+
+/* @keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgb(255, 70, 156);
+  }
+} */
+
+.hero-text {
+  font-size: 22px;
+  margin-bottom: 12px;
   
-    .card {
-      width: 90%;
-    }
-  }
+  color: #ff0073;
+}
+.hero-text2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  margin-bottom: 30px;
+ 
+}
+@import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
+#container {
+  position: absolute;
+  margin: auto;
+  width: 100vw;
+  height: 80pt;
+  top: 0;
+  bottom: 0;
+  filter: url(#threshold) blur(0.6px);
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+  color: #18150d;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-size: 32px;
+  line-height: 42px;
+  font-weight: bold;
+  color: #464646;
+}
+.main_cont{
+  padding: 10px 150px;
+  /* display: inline-block; */
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+.btn-default{
+  padding: 15px 32px;
+  text-decoration: none;
+  color: white;
+  display: block;
+  width: 200px;
+  background-color: black;
+  border: 1.5   px solid white;
+  border-radius: 30px 30px;
+}
+.btn-default:hover{
+  background-color:  #e20468;
+  
+  transition: background-color 0.25s linear;
+}
+.btn-default svg{
+  height: 12px;
+  width: 15px;
+  gap: 2px;
+  
+}

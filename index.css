@@ -36,7 +36,7 @@ background: radial-gradient(circle, rgba(113,0,0,1) 29%, rgba(0,0,0,1) 100%); */
 #img-logo{
   width: 461px;
   height: 82px;
-  margin-left: 80px;
+  
 }
 
 ul {
@@ -164,6 +164,7 @@ ul {
   display: flex;
   gap: 10px;
   width: 250px;
+  justify-content: center;
 }
 
 @keyframes typing {
@@ -179,14 +180,15 @@ ul {
 }
 .hero-section img{
   width: 100%;
-  height: 1040px;
+  /* height: 1040px; */
   position: relative;
 }
 .hero-section {
-  padding-top: 235px;
-  padding-bottom: 195px;
+  padding-top: 130px;
+  padding-bottom: 180px;
+  height: 150px;
   background: linear-gradient(rgba(36, 39, 38, 0.5), rgba(36, 39, 38, 0.5)),
-    rgba(36, 39, 38, 0.5) url(./Images/Salon3\ \(1\).jpg) no-repeat center;
+    rgba(36, 39, 38, 0.5) url(./Images/left-img.jpg) no-repeat center;
   background-size: cover;
 }
 .hero-caption {
@@ -194,23 +196,22 @@ ul {
   padding-bottom: 100px;
 }
 
-.hero-title {
+/* .hero-title {
   display: inline-block;
   font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
-}
+} */
 
 .hero-title {
   color: white;
   font-weight: bold;
   display: inline-block;
   overflow: hidden;
-  letter-spacing: 2px;
-  animation: typing 1.3s steps(30, end), blink 0.75s step-end infinite;
+  letter-spacing: 3px;
+  animation: typing 0.9s steps(13, end);
   
   white-space: nowrap;
-  font-size: 30px;
-  font-weight: 700;
-  border-right: 2px solid rgb(255, 255, 255);
+  font-size: 32px;
+  /* border-right: 2px solid rgb(255, 255, 255); */
   box-sizing: border-box;
 }
 
@@ -223,7 +224,7 @@ ul {
   }
 }
 
-@keyframes blink {
+/* @keyframes blink {
   from,
   to {
     border-color: transparent;
@@ -231,19 +232,20 @@ ul {
   50% {
     border-color: rgb(255, 70, 156);
   }
-}
+} */
 
 .hero-text {
-  font-size: 20px;
+  font-size: 22px;
   margin-bottom: 12px;
-  font-style: italic;
+  
   color: #ff0073;
 }
 .hero-text2 {
-  font-size: 18px;
+  font-size: 20px;
+  margin-bottom: 10px;
   color: #ffffff;
   margin-bottom: 30px;
-  font-style: italic;
+ 
 }
 @import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
 #container {
@@ -270,4 +272,30 @@ h1 {
   line-height: 42px;
   font-weight: bold;
   color: #464646;
+}
+.main_cont{
+  padding: 10px 150px;
+  /* display: inline-block; */
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
+.btn-default{
+  padding: 15px 32px;
+  text-decoration: none;
+  color: white;
+  display: block;
+  width: 200px;
+  background-color: black;
+  border: 1.5   px solid white;
+  border-radius: 30px 30px;
+}
+.btn-default:hover{
+  background-color:  #e20468;
+  
+  transition: background-color 0.25s linear;
+}
+.btn-default svg{
+  height: 12px;
+  width: 15px;
+  gap: 2px;
+  
 }

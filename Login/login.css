@@ -30,7 +30,6 @@ background: radial-gradient(circle, rgba(113,0,0,1) 29%, rgba(0,0,0,1) 100%); */
 #img-logo {
   width: 461px;
   height: 82px;
-  margin-left: 80px;
 }
 
 ul {
@@ -165,6 +164,8 @@ ul {
   display: flex;
   gap: 10px;
   width: 250px;
+  justify-content: center;
+
 }
 
 @keyframes typing {

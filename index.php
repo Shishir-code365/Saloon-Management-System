@@ -38,12 +38,12 @@
       <div class="hero-section">
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <h1 class="hero-title">MEN'S SALON MANAGEMENT SYSTEM <i class="fa fa-scissors"></i></h1>
-              <p class="hero-text"><strong>YOUR TYPES , YOUR STYLE , YOUR COLOR  .</strong> </p>
+            <div class="main_cont">
+              <h1 class="hero-title">MEN'S SALON MANAGEMENT SYSTEM </h1>
+              <p class="hero-text"><strong>YOUR TYPES , YOUR STYLE , YOUR COLOR</strong> </p>
                     <p class="hero-text2"><strong>ANY TIME ANYWHERE "24X7" OPEN</strong> </p>
     
-              <a href="appointment.php" class="btn btn-default">Make an Appointment</a>
+              <a href="./Login/login.php" class="btn btn-default">Make an Appointment <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z" fill="white"/></svg></a>
             </div>
           </div>
         </div>

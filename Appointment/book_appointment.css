@@ -1,0 +1,13 @@
+label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  input, select {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  
+  input[type="submit"] {
+    margin-top: 20px;
+  }

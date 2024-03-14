@@ -27,7 +27,7 @@ background: radial-gradient(circle, rgba(113,0,0,1) 29%, rgba(0,0,0,1) 100%); */
 #img-logo{
   width: 461px;
   height: 82px;
-  margin-left: 80px;
+  
 }
 
 ul {
@@ -152,6 +152,7 @@ ul {
   display: flex;
   gap: 10px;
   width: 250px;
+  justify-content: center;
 }
 
 @keyframes typing {
@@ -193,6 +194,7 @@ ul {
     background-image: url(../Images/Salon3\ \(1\).jpg);
     background-size:cover;
     width: 100%;
+    padding: 100px 0px;
   }
   
   .card2 {
@@ -202,12 +204,14 @@ ul {
     min-height: 450px;
     width: 350px;
     flex-direction: column;
-    gap: 35px;
+    gap: 40px;
     border-radius: 15px;
     background: rgba(0, 0, 0, 0.33);
     border: 2px solid rgba(255, 255, 255, 0.199);
     backdrop-filter: blur(20px);
     border-radius: 8px;
+    /* margin-top: 200px; */
+    
   }
   .inputBox2{
     position: relative;
@@ -281,6 +285,12 @@ ul {
     color: rgb(255, 255, 255);
   }
   .enteruser2{
+    color: rgb(193, 18, 18);
+    font-size: 15px;
+    display: none;
+    
+  }
+  .validuser2{
     color: rgb(193, 18, 18);
     font-size: 15px;
     display: none;

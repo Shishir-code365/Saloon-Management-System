@@ -7,18 +7,13 @@ var enterphone = document.querySelector('.enterphone');
 var repassmatch = document.querySelector('.repassmatch');
 var numberformat = document.querySelector('.numberformat');
 var validemail = document.querySelector('.validemail');
+var validuser2 = document.querySelector('.validuser2');
 enter2.addEventListener('click',()=>{
     var username2 = document.querySelector('.username2').value;
     var password2 = document.querySelector('.password2').value;
     var repassword2 = document.querySelector('.repassword2').value;
     var email = document.querySelector('.email').value;
     var phone = document.querySelector('.phone').value;
-
-    console.log("Username: ", username2);
-    console.log("Password: ", password2);
-    console.log("Repassword: ", repassword2);
-    console.log("Email: ", email);
-    console.log("Phone: ", phone);
 
     enteruser2.style.display = 'none';
     enterpass2.style.display = 'none';
@@ -28,11 +23,15 @@ enter2.addEventListener('click',()=>{
     repassmatch.style.display = 'none';
     validemail.style.display = 'none';
     numberformat.style.display = 'none'; 
+    validuser2.style.display = 'none';
 
     if (!username2) {
         enteruser2.style.display = 'inline';
     }
-
+    else if(!validateUsername(username2))
+     {
+        validuser2.style.display = 'inline';
+     }
     if (!password2) {
         enterpass2.style.display = 'inline';
     }
@@ -46,7 +45,7 @@ enter2.addEventListener('click',()=>{
     if (!email) {
         enteremail.style.display = 'inline';
     }
-    else if (!email||!validateEmail(email)) {
+    else if (!validateEmail(email)) {
         validemail.style.display = 'inline';
     }
 
@@ -64,7 +63,7 @@ function validate_register() {
     var repassword2 = document.querySelector('.repassword2').value;
     var email = document.querySelector('.email').value;
     var phone = document.querySelector('.phone').value;
-
+    
     // Reset error messages
     enteruser2.style.display = 'none';
     enterpass2.style.display = 'none';
@@ -73,12 +72,17 @@ function validate_register() {
     enterphone.style.display = 'none';
     repassmatch.style.display = 'none';
     validemail.style.display = 'none';
-    numberformat.style.display = 'none'; // Reset the 'password mismatch' error
-
+    numberformat.style.display = 'none';
+    validuser2.style.display ='none'; // Reset the 'password mismatch' error
+    
     if (!username2) {
         enteruser2.style.display = 'inline';
     }
-
+    else if(!validateUsername(username2))
+    {
+        validuser2.style.display = 'inline';
+    }
+    
     if (!password2) {
         enterpass2.style.display = 'inline';
     }
@@ -89,20 +93,20 @@ function validate_register() {
         enterrepass2.style.display = 'none'; // Clear 'enterrepass2' error
         repassmatch.style.display = 'inline';
     }
-
+    
     if (!email) {
         enteremail.style.display = 'inline';
-    } else if (!email || !validateEmail(email)) {
+    } else if (!validateEmail(email)) {
         validemail.style.display = 'inline';
     }
-
+    
     if (!phone) {
         enterphone.style.display = 'inline';
     } else if (!validatePhone(phone)) {
         numberformat.style.display = 'inline';
     }
-  
-
+    
+    
     // Prevent form submission if any error is displayed
     if (
         enteruser2.style.display === 'inline' ||
@@ -112,12 +116,17 @@ function validate_register() {
         enteremail.style.display === 'inline' ||
         validemail.style.display === 'inline' ||
         enterphone.style.display === 'inline' ||
-        numberformat.style.display === 'inline'
-    ) {
-        return false;
+        numberformat.style.display === 'inline'||
+        validuser2.style.display === 'inline'
+        ) {
+            return false;
+        }
+        else{
+        
+        alert("Signed Up Successfully!");
+        return true;
     }
-
-    return true;
+    
 }
 
 function validateEmail(email) {
@@ -130,4 +139,9 @@ function validatePhone(phone) {
     // Phone number validation regex
     var phoneRegex = /^[9]\d{9}$/;
     return phoneRegex.test(phone);
+}
+function validateUsername(username2)
+{
+    var username2Regex = /^[a-zA-Z][a-zA-Z]+( [a-zA-Z]+)?( [a-zA-Z]+)?[a-zA-Z]$/;
+    return username2Regex.test(username2);
 }
