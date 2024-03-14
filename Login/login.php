@@ -139,6 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             
             </div>
             <button type="submit" class="enter">Enter</button>
+            <span style="color:white">Don't have an acount? <a href="../Signup/signup.php" style="text-decoration:none;color:white;" >Create one</a></span>
           </div>
         </div>
       </form>
