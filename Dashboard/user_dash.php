@@ -1,56 +1,123 @@
 <?php 
 session_start();
+include "../connection.php";
+$username = $_SESSION["user_name"];
 if(!isset($_SESSION['user_id'])){
     header("Location: ../index.php");
 }
 ?>
-
-
-<!DOCTYPE html>
+<span style="font-family: verdana, geneva, sans-serif;"><!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./user_dash.css">
-    <link rel="preload" as="image" href="../Images/barber.jpg">
+  <meta charset="UTF-8" />
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="user_dash.css" />
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 </head>
 <body>
-    <div class="navbar">
-          <div class="logo">
-            <img id="img-logo" src="../Images/logo5.jpg" alt="">
-          </div>
-          <div class="items">
-          <ul>
-            <li><a href="user_dash.php">home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="../Appointment/book_appointment.php">Book Appointment</a></li>
-            <li><a href="#">Review</a></li>
-          </ul>
-        </div>
-          <div class="log-sign">
-          <button class="Btn">
-            <div class="sign"><svg viewBox="0 0 512 512"><path fill="#ff0000" d="M217.9 105.9L340.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L217.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1L32 320c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM352 416l64 0c17.7 0 32-14.3 32-32l0-256c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c53 0 96 43 96 96l0 256c0 53-43 96-96 96l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg></div>
-            <div class="text"><a href="../logout/logout.php">Logout</a></div>
-          </button> 
+  <header class="header">
+    <!-- <div class="logo">
+     <img src="../Images/4992262.jpg" alt="">
 
-       </div>
+    </div> -->
+
+    <div class="header-icons">
+      <div class="account">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+        <h4><?php
+        $username = $_SESSION['user_name'];
+        echo "".$username;
+        ?></h4>
       </div>
-      <div class="hero-section">
-        <div class="container">
-          <div class="row">
-            <div class="main_cont">
-              <h1 class="hero-title">MEN'S SALON MANAGEMENT SYSTEM <i class="fa fa-scissors"></i></h1>
-              <p class="hero-text"><strong>YOUR TYPES , YOUR STYLE , YOUR COLOR  .</strong> </p>
-                    <p class="hero-text2"><strong>ANY TIME ANYWHERE "24X7" OPEN</strong> </p>
-              <a href="../Appointment/book_appointment.php" class="btn btn-default">Make an Appointment <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z" fill="white"/></svg></a>
-            </div>
-          </div>
-        </div>
+    </div>
+  </header>
+  <div class="container">
+    <nav>
+      <div class="side_navbar">
+        <span>Main Menu</span>
+
+       <a href="#" class="active" id="dash">Dashboard</a>
+       <a href="../Appointment/book_appointment.php" id="book">Book Appointment</a>
+        <a href="#">Profile</a>
+        <a href="#">Services</a>
+        <a href="#">Invoice</a>
+        <a href="#">Feedback</a>
+        <button class="logout">Logout <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z" fill= "rgb(100, 100, 100)"/></svg></button>
+
       </div>
-     </div>
+    </nav>
 
+    <div class="main-body">
+      
+      <h2>Dashboard</h2>
+      <div class="promo_card">
+        <h1 style="text-transform: capitalize">Welcome <?php
+        echo "".$_SESSION["user_name"];
+         ?></h1>
+        <span>Transform Your Look, Book Your Appointment Now!</span>
+        <button class="book">Book Appointment</button>
+      </div>
+      <div class="row">
+            <h4>Your Past Appointments</h4>
+ 
+          </div>
+        <div class="list1">
+         
+          <table>
+            <thead>
+              <tr>
+                <th>S.N.</th>
+                <th>Appointment Date</th>
+                <th>Appointment Time</th>
+                <th>Service</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+            <?php 
+                $sql = "Select appointment_date, appointment_time, service from appointment where name = '$username' order by appointment_date, appointment_time";
+                $res = mysqli_query($con,$sql);
+                if($res)
+                {
+                  if (mysqli_num_rows($res) > 0) {
+                  $i = 1;
+                  while ($row = mysqli_fetch_assoc($res))
+                  {
+                    $appointmentDate = $row["appointment_date"];
+                    $appointmentTime = $row["appointment_time"];
+                    $service = $row["service"];
 
+                    echo "<tr>
+                    <td>".$i++."</td>
+                    <td>$appointmentDate</td>
+                    <td>$appointmentTime</td>
+                    <td>$service</td>
+                  </tr>";
+                  }
+                  
+                }
+                else {
+                  echo "<tr><td colspan='3' style='text-align: center;'>No Appointments made till now!!!🥲</td></tr>";
+              }
+                
+                }
+               
+                
+                ?>
+              
+
+            </tbody>
+          </table>
+        </div>
+    </div>
+   
+    <!-- <div class="profile" ><h1>Profile</h1></div>
+    <div class="service" ><h1>Servicces</h1></div>
+    <div class="invoice" ><h1>Invoice</h1></div>
+    <div class="feedback"><h1>Feedback</h1>></div> -->
+  </div>
 </body>
+<script src="user_dash.js"></script>
 </html>
+              </span>

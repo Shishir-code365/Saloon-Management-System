@@ -12,7 +12,7 @@
     
         <div class="navbar">
           <div class="logo">
-            <img id="img-logo" src="./Images/logo5.jpg" alt="">
+            <img id="img-logo" src="./Images/4992262.jpg" alt="">
           </div>
           <div class="items">
           <ul>
@@ -39,7 +39,7 @@
         <div class="container">
           <div class="row">
             <div class="main_cont">
-              <h1 class="hero-title">MEN'S SALON MANAGEMENT SYSTEM </h1>
+              <h1 class="hero-title">SALON MANAGEMENT SYSTEM </h1>
               <p class="hero-text"><strong>YOUR TYPES , YOUR STYLE , YOUR COLOR</strong> </p>
                     <p class="hero-text2"><strong>ANY TIME ANYWHERE "24X7" OPEN</strong> </p>
     

@@ -60,7 +60,7 @@ ul {
         width: 100%;
         height: 3px;
         /* background: #34db37; */
-        background: #FFD700;
+        background: #fe6601;
         transform: scaleX(0);
         transform-origin: right;
         transition: transform 0.25s;
@@ -358,4 +358,16 @@ ul {
   .card {
     width: 90%;
   }
+}
+.create{
+  color: white;
+}
+.create a:hover{
+  color: #fe6601 !important;
+}
+.create a:link{
+  color: white;
+}
+.create a:visited{
+  color: white;
 }

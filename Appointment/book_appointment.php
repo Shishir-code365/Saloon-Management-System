@@ -15,11 +15,13 @@ if($_SERVER['REQUEST_METHOD']=='POST')
   $appointmentTime = date("H:i:s", strtotime($_POST['appointmentTime']));
 
   $service = $_POST['service'];
-  $check_sql = "Select * from appointment where appointment_date= '$appointmentDate' and ((appointment_time = '$appointmentTime') or (appointment_time >= '$appointmentTime' and appointment_time < ADDTIME('$appointmentTime','00:30:00 ')))";
+  $check_sql = "SELECT * FROM appointment WHERE (appointment_date = '$appointmentDate' AND appointment_time = '$appointmentTime')";
+
   $result = mysqli_query($con,$check_sql);
   if(mysqli_num_rows($result)>0)
   {
-    echo "*Another appointment already booked on the same date and same time!";
+    echo '<script>
+            alert("*Another appointment already booked on the same date and same time!");</script>';
   }
   else{
     $sql = "insert into appointment (name,email,phone,gender,appointment_date,appointment_time,service) values('$name','$email','$phone','$gender','$appointmentDate','$appointmentTime','$service')";
@@ -46,44 +48,49 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 
 
 ?>
+<span style="font-family: verdana, geneva, sans-serif;"><!DOCTYPE html>
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="book_appointment.css">
+  <meta charset="UTF-8" />
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="book_appointment.css" />
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 </head>
 <body>
-<div class="navbar">
-          <div class="logo">
-            <img id="img-logo" src="../Images/logo5.jpg" alt="">
-          </div>
-          <div class="items">
-          <ul>
-            <li><a href="../Dashboard/user_dash.php">home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="../Appointment/book_appointment.php">Book Appointment</a></li>
-            <li><a href="#">Review</a></li>
-          </ul>
-        </div>
-        <div class="log-sign">
-          <button class="Btn">
-            <div class="sign"><svg viewBox="0 0 512 512"><path fill="#ff0000" d="M217.9 105.9L340.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L217.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1L32 320c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM352 416l64 0c17.7 0 32-14.3 32-32l0-256c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c53 0 96 43 96 96l0 256c0 53-43 96-96 96l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"></path></svg></div>
-            <div class="text"><a href="../logout/logout.php">Logout</a></div>
-          </button> 
-         
-       </div>
+  <header class="header">
+    <!-- <div class="logo">
+     <img src="../Images/4992262.jpg" alt="">
+
+    </div> -->
+
+    <div class="header-icons">
+      <div class="account">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+        <h4><?php
+        $username = $_SESSION['user_name'];
+        echo "".$username;
+        ?></h4>
       </div>
-      <div class="hero-section">
-        <div class="container">
-              <h1 class="hero-title">Book Appointment</h1><br>
-              <h3 class="hero-title">Streamline Your Schedule: Book Appointments with Ease!</h3>
-        </div>
+    </div>
+  </header>
+  <div class="container">
+    <nav>
+      <div class="side_navbar">
+        <span>Main Menu</span>
+        <a href="../Dashboard/user_dash.php">Dashboard</a>
+       <a href="#" class= "active">Book Appointment</a>
+        <a href="#">Profile</a>
+        <a href="#">Services</a>
+        <a href="#">Invoice</a>
+        <a href="#">Feedback</a>
+        <button class="logout">Logout <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z" fill= "rgb(100, 100, 100)"/></svg></button>
       </div>
-    <span class="start_appoint"><h1>Appointment Form</h1></span>
+    </nav>
+    <div class="apart">
+    <div class="start_appoint"><h2>Appointment Form</h2></div>
 <div class="appointment_form">
+
 <form id="appointmentForm" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>">
   <?php
   $userid = $_SESSION['user_id'];
@@ -95,6 +102,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
   }
    
   ?>
+  
   <div class="name">
   <label for="name">Name:</label><br>
   <input type="text" id="name" name="name" value="<?php echo $user_row['username'];?>" required></div>
@@ -118,14 +126,19 @@ if($_SERVER['REQUEST_METHOD']=='POST')
   <input type="date" id="appointmentDate" name="appointmentDate" required></div>
   <div class="time">
   <label for="appointmentTime">Appointment Time:</label><br>
-  <input type="time" id="appointmentTime" name="appointmentTime" required></div>
+  <input type="text" id="appointmentTime" name="appointmentTime" required readonly></div>
+  <div id="timeButtons"></div>
   <div class="service">
   <label for="service">Service:</label><br>
   <input type="text" id="service" name="service" required></div>
   <div class="submit">
   <input type="submit" value="Submit" class="btn btn-default"></div>
-  </div>
 </form>
+</div>
+</div>
+</div>
 <script src="book_appointment.js"></script>
+<script src="ajax.js"></script>
 </body>
 </html>
+</span>

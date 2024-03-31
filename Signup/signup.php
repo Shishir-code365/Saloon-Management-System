@@ -27,6 +27,7 @@ if (isset($_POST['register'])) {
 
         if ($stmt->affected_rows > 0) {
             $_SESSION['success_message']="Signed Up Successfully!";
+            echo '<script>alert("Signed Up Successfully");</script>';
             header("Location: ../Dashboard/user_dash.php"); 
             exit();
         } else {

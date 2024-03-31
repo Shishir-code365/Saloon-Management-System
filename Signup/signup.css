@@ -57,7 +57,7 @@ ul {
         width: 100%;
         height: 3px;
         /* background: #34db37; */
-        background: #FFD700;
+        background: #fe6601;
         transform: scaleX(0);
         transform-origin: right;
         transition: transform 0.25s;
