@@ -80,7 +80,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
         <span>Main Menu</span>
         <a href="../Dashboard/user_dash.php">Dashboard</a>
        <a href="#" class= "active">Book Appointment</a>
-        <a href="#">Profile</a>
+        <a href="../Profie/profile.php">Profile</a>
         <a href="#">Services</a>
         <a href="#">Invoice</a>
         <a href="#">Feedback</a>
@@ -125,9 +125,10 @@ if($_SERVER['REQUEST_METHOD']=='POST')
   <label for="appointmentDate">Appointment Date:</label><br>
   <input type="date" id="appointmentDate" name="appointmentDate" required></div>
   <div class="time">
-  <label for="appointmentTime">Appointment Time:</label><br>
-  <input type="text" id="appointmentTime" name="appointmentTime" required readonly></div>
+  <label for="appointmentTime">Available Times:</label><br>
   <div id="timeButtons"></div>
+  <input type="text" id="appointmentTime" name="appointmentTime" required readonly></div>
+  
   <div class="service">
   <label for="service">Service:</label><br>
   <input type="text" id="service" name="service" required></div>

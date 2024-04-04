@@ -72,7 +72,7 @@ nav{
   border: 0.5px solid white;
   border-radius: 40px;
   width: 260px;
- 
+  
 }
 .side_navbar span{
   color: gray;
@@ -101,6 +101,7 @@ nav{
   background-color: rgba(0, 0, 0, 0.766);
   border: 1.5 px solid white;
   border-radius: 30px 30px;
+  margin-left: 10px;
 }
 .logout:hover{
   cursor: pointer;
@@ -127,66 +128,43 @@ nav{
 .side_navbar .active{
   border-left: 2.5px solid #fe6601;
 }
-
-/* Main Body Section */
-.main-body {
+.info-content{
+  height: auto;
   width: 80%;
+  
+}
+.profile-logo{
+  height: auto;
+  width: 18%;
   display: flex;
   flex-direction: column;
-  height: 90vh;
-  overflow: scroll;
-
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.196);
+  background-color: rgba(255, 255, 255, 0.74);
+  
 }
-.promo_card{
-  width: 98%;
-  color: #fff;
-  margin-top: 10px;
-  border-radius: 8px;
-  padding: 0.5rem 1rem 1rem 3rem;
-  background: rgb(37, 37, 37);
-  /* background: rgba(202, 104, 0, 0.79) */
-}
-.promo_card h1, .promo_card span, button{
-  margin: 10px;
-}
-.promo_card button{
-  display: block;
-  padding: 6px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.list1{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 98%;
-}
-.row{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 1rem 0;
-}
-table{
-  background: white;
+.main-body{
   width: 100%;
   height: auto;
-  border-collapse: collapse;
-  border-radius: 10px;
+  display: flex;
+  
+}
+.svg{
+  width: 100%;
+  height: 30%;
+  margin-top: 60px;
+  
+}
+.svg img{
+  padding: 30px 32px;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+.info{
+  width: 100%;
   text-align: center;
 }
-
-table th{
-  font-size: 15px;
-}
-table td{
-  font-size: 13px;
-  color: rgb(100, 100, 100);
-}
-table th,td{
-  padding: 5px;
-    
-}
-.book_appointment{
-  display: none;
+.info h4{
+  text-transform: capitalize;
 }

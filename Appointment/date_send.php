@@ -1,21 +1,21 @@
 <?php
 include "../connection.php";
 
-if(isset($_POST['selectDate'])) {
-    $selectedDate = date("Y-m-d", strtotime($_POST['appointmentDate']));
+if (isset($_POST['selectDate'])) {
+    $selectedDate = date("Y-m-d", strtotime($_POST['selectDate']));
 
-    $query = "SELECT appointment_time FROM appointments WHERE appointment_date = ?";
+    $query = "SELECT appointment_time FROM appointment WHERE appointment_date = ?";
 
+    $stmt = $con->prepare($query);
+    $stmt->bind_param("s", $selectedDate);
+    $stmt->execute();
+    $result = $stmt->get_result();
     
-    $stmt = $pdo->prepare($query);
-    $stmt->execute([$selectedDate]);
-    $bookedTimes = $stmt->fetchAll(PDO::FETCH_COLUMN);
-    
-
-    if (count($bookedTimes) > 0) {
-        echo json_encode($bookedTimes); // Return booked times if there are any
-    } else {
-        // No booked times on this date, echo nothing
+    $bookedTimes = array();
+    while ($row = $result->fetch_assoc()) {
+        $bookedTimes[] = $row['appointment_time'];
     }
+    
+    echo json_encode($bookedTimes);
 }
 ?>

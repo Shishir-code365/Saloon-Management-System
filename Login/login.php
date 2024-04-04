@@ -40,7 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (md5($loginPassword) == $hashedPassword) {
       $_SESSION['user_id'] = $row['id'];
       $_SESSION['user_name'] = $row['username'];
-      $_SESSION['user_password']= $row['password'];
+      $_SESSION['name'] = $row['Name'];
+      $_SESSION['email']= $row['email'];
       
         header("Location: ../Dashboard/user_dash.php");
       exit;
@@ -57,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $_SESSION['user_name'] = $row['admin_username'];
 
       header("Location: ../Dashboard/admin_dash.php");
-      exit;
+      exit();
     } else {
       $_SESSION['error_message'] = "Invalid username or password";
     }
@@ -131,8 +132,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="error_message"> <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST" &&   isset($_SESSION['error_message']) && !empty($_SESSION['error_message'])) {
             echo $_SESSION['error_message'];
-            // Clear the error message to avoid displaying it again on refresh
-           
            unset($_SESSION['error_message']);
         }
         ?>

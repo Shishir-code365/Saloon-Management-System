@@ -24,32 +24,38 @@
 const timeButtonsContainer = document.getElementById("timeButtons");
 
 // Generate buttons for each half-hour interval
-for (let hour = 8; hour <= 20; hour++) { // 8am to 8pm
+for (let hour = 8; hour < 19; hour++) { // 8am to 8pm
     for (let minute = 0; minute < 60; minute += 30) { // 30 minute intervals
-        const formattedHour = hour.toString().padStart(2, '0');
+        const ampm = (hour < 12 || hour === 24) ? 'AM' : 'PM';
+        const hour12 = (hour % 12 === 0) ? 12 : hour % 12;
         const formattedMinute = minute.toString().padStart(2, '0');
-        const time = `${formattedHour}:${formattedMinute}:00`;
+        const time12hr = `${hour12}:${formattedMinute} ${ampm}`;
+        const formattedHour = hour.toString().padStart(2, '0');
+        const time24hr = `${formattedHour}:${formattedMinute}:00`; // HH:MM:SS format
+
         const button = document.createElement('button');
-        button.textContent = time;
-        button.value = time; // You can use this value when the button is clicked to record the selected time
+        button.textContent = time12hr; // Display format
+        button.value = time24hr; // Database format
         timeButtonsContainer.appendChild(button);
     }
 }
 
 
 
+
     const appointmentTime = document.getElementById("appointmentTime");
     const buttons = document.querySelectorAll('#timeButtons button');
-    
-    // Loop through each button and add click event listener
+
     buttons.forEach(button => {
         button.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent the default form submission behavior
-            appointmentTime.value = button.textContent; // Set the value of the appointment time input field to the text content of the clicked button
+            event.preventDefault(); 
+            appointmentTime.value = button.textContent;
         });
     });
     
+
     appointmentDateInput.addEventListener('input', () => {
+          
         const selectedDate = appointmentDateInput.value;
         $.ajax({
             type: 'post',
@@ -58,15 +64,23 @@ for (let hour = 8; hour <= 20; hour++) { // 8am to 8pm
             success: function (response) {
                 if (response) {
                     const bookedTimes = JSON.parse(response);
-                    buttons.forEach(button => {
-                        if (bookedTimes.includes(button.value)) {
-                            button.style.display = 'none'; // Hide buttons with booked times
-                        } else {
-                            button.style.display = 'block'; // Show buttons with available times
-                        }
-                    });
+                    const totalPossibleAppointments = 22;
+                    console.log("Booked Times: ", bookedTimes);
+                    console.log("Total Possible Appointments: ", totalPossibleAppointments);
+                    if (bookedTimes.length >= totalPossibleAppointments) {
+                        alert("Sorry, all appointments are full for the day!!!");
+                        window.location.href = "../Dashboard/user_dash.php"; // Redirect to dashboard
+                    } else {
+                        timeButtonsContainer.style.display = "grid";
+                        buttons.forEach(button => {
+                            if (bookedTimes.includes(button.value)) {
+                                button.style.display = 'none'; // Hide buttons with booked times
+                            } else {
+                                button.style.display = 'block'; // Show buttons with available times
+                            }
+                        });
+                    }
                 } else {
-                    
                     buttons.forEach(button => {
                         button.style.display = 'block';
                     });
@@ -78,4 +92,12 @@ for (let hour = 8; hour <= 20; hour++) { // 8am to 8pm
         });
     });
     
+    const serviceInput = document.getElementById("service");
+
+
+    serviceInput.addEventListener('keydown', function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); 
+        }
+    });
     

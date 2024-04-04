@@ -3,9 +3,18 @@ session_start();
 include "../connection.php";
 $username = $_SESSION["user_name"];
 if(!isset($_SESSION['user_id'])){
+
     header("Location: ../index.php");
 }
+
+if(isset($_SESSION['redirect'])&&($_SESSION['redirect'])==true){
+
+  echo"<script>alert('Signed Up Successfully')</script>";
+  unset($_SESSION['redirect']);
+}
+
 ?>
+
 <span style="font-family: verdana, geneva, sans-serif;"><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +48,7 @@ if(!isset($_SESSION['user_id'])){
 
        <a href="#" class="active" id="dash">Dashboard</a>
        <a href="../Appointment/book_appointment.php" id="book">Book Appointment</a>
-        <a href="#">Profile</a>
+        <a href="../Profie/profile.php">Profile</a>
         <a href="#">Services</a>
         <a href="#">Invoice</a>
         <a href="#">Feedback</a>
@@ -117,7 +126,8 @@ if(!isset($_SESSION['user_id'])){
     <div class="invoice" ><h1>Invoice</h1></div>
     <div class="feedback"><h1>Feedback</h1>></div> -->
   </div>
+
 </body>
 <script src="user_dash.js"></script>
 </html>
-              </span>
+ </span>

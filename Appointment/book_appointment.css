@@ -140,17 +140,22 @@ nav{
   
   width: 80%;
   display: flex;
-  margin-left: 50px;
+
   font-family:"Montserrat", sans-serif;
   margin-top: 35px;
   margin-bottom: 20px;
-  
+  justify-content: center;
+ 
   
 }
+
 label{
   
   color: #464646;
   font-weight: 600;
+}
+h2{
+  margin-left: 70px;
 }
 
 .name input{
@@ -291,9 +296,16 @@ text-transform: capitalize;
   cursor: pointer;
   color: white;
   background-color: black; 
+  box-shadow: 1px 1px 3px #fe6601;
+  
 }
 #timeButtons button{
   padding: 5px;
   border-radius: 15px 15px;
-  box-shadow: 1px 1px 3px #ec9e9e;
+  
+}
+#timeButtons{
+  display: none;
+  margin-bottom: 20px;
+
 }
