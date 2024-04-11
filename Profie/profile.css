@@ -113,6 +113,22 @@ nav{
   width: 12px;
   
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+
 .links{
   margin-top: 5rem;
   display: flex;
@@ -129,42 +145,265 @@ nav{
   border-left: 2.5px solid #fe6601;
 }
 .info-content{
-  height: auto;
-  width: 80%;
-  
+  height: 90vh;
+  width: 78%;
+  background-color: rgba(255, 255, 255, 0.63);
+  overflow: scroll;
+
 }
 .profile-logo{
   height: auto;
   width: 18%;
   display: flex;
-  flex-direction: column;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.196);
-  background-color: rgba(255, 255, 255, 0.74);
-  
+  background-color: rgba(255, 255, 255, 0.63);
 }
 .main-body{
   width: 100%;
   height: auto;
   display: flex;
-  
+  gap: 1px;
 }
 .svg{
-  width: 100%;
-  height: 30%;
-  margin-top: 60px;
-  
-}
-.svg img{
-  padding: 30px 32px;
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
-}
-.info{
+  margin-top: 100px;
   width: 100%;
   text-align: center;
+  height: 30%;
+
 }
-.info h4{
+.svg img{
+  padding: 10px;
+  height: 65%;
+  width: 55%;
+  border-radius: 50%;
+}
+
+.svg h4{
   text-transform: capitalize;
+  color:  rgb(90, 90, 90);
 }
+.svg p {
+  font-size: small;
+  color: gray;
+}
+.content-header h2{
+  text-align: center;
+  margin-top: 10px;
+}
+.setting-content{
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-left: 20px;
+  
+}
+.setting-content input{
+  border: 1px solid #dbdbdb;
+  
+
+   border-radius: 10px;
+   padding: 0px 15px;
+   margin-top: 10px;
+   margin-bottom: 15px;
+   width: 550px;
+   height: 50px;
+   background-color: #f4f4f4;
+   font-size: 15px;
+  }
+  #nameinput{
+    color: gray;
+    margin-left: 20px;
+    text-transform: capitalize;
+  }
+  #nameinput:hover{
+    cursor:default;
+  }
+
+  .email{
+    margin-top: 10px;
+  }
+  .password{
+    margin-top: 10px;
+  }
+  .phone{
+    margin-top: 10px; 
+  }
+
+  #emailinput{
+    color: gray;
+    margin-left: 20px;
+  }
+
+  #emailinput:hover{
+    cursor:default;
+  }
+
+  .username{
+    margin-top: 10px;
+  }
+  #usernameinput{
+    color: gray;
+    margin-left: 20px;
+  }
+  #usernameinput:hover{
+    cursor:default;
+  }
+  #passwordinput{
+    color: gray;
+    margin-left: 20px;
+  }
+  #passwordinput:hover{
+    cursor:default;
+  }
+  #phoneinput{
+    color: gray;
+    margin-left: 20px;
+  }
+  #phoneinput:hover{
+    cursor:default;
+  }
+
+
+
+
+
+  .lock{
+    border: none;
+    padding: 12px 12px;
+    margin-left: 2px;
+    width: auto;
+    background-color: rgba(255, 166, 0, 0.525);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+
+
+  }
+  .unlock{
+    border: none;
+    padding: 12px 12px;
+    margin-left: 2px;
+    width: auto;
+    background-color: rgba(255, 166, 0, 0.525);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    display: none;
+  }
+  .edit{
+    border: none;
+    padding: 9px 25px;
+    margin-left: 20px;
+    width: auto;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+
+  }
+  .edit:hover{
+    cursor:pointer;
+    background-color: #fe6601;
+   
+  }
+  .lock:hover{
+    cursor: pointer;
+    background-color: orange;
+  }
+  .unlock:hover{
+    cursor: pointer;
+    background-color: orange;
+  }
+
+  .done{
+    display: none;
+    padding: 10px 25px;
+    margin-left: 20px;
+    width: auto;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+  }
+  .done:hover{
+    cursor: pointer;
+    background-color:#fe6601;
+  }
+  .edit svg{
+   height: 11px;
+   width: 11px;
+   margin-right: 5px;
+  }
+  .lock svg{
+    height: 11px;
+   width: 11px;
+   
+  }
+  .unlock svg{
+    height: 11px;
+   width: 11px;
+  }
+  .done svg{
+    height: 11px;
+   width: 11px;
+   margin-right: 5px;
+  }
+  .errormsg{
+    color: red;
+    display: none;
+  }
+  .success_name{
+    color:green;
+    display: none;
+  }
+
+  .errormsg_email{
+    color: red;
+    display: none;
+  }
+  .success_email{
+    color:green;
+    display: none;
+  }
+
+  .errormsg_username{
+    color: red;
+    display: none;
+  }
+  .success_username{
+    color:green;
+    display: none;
+  }
+
+  .errormsg_password{
+    color: red;
+    display: none;
+  }
+  .success_password{
+    color:green;
+    display: none;
+  }
+  .errormsg_phone{
+    color: red;
+    display: none;
+  }
+  .success_phone{
+    color:green;
+    display: none;
+  }
+  .btn{
+    width: auto;
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+  }
+  .delete{
+    padding: 10px 35px;
+    border-radius: 10px;
+    background-color: rgba(255, 0, 0, 0.563);
+    transition: background-color 0.3s ease;
+    color: white;
+  }
+  .delete:hover{
+    cursor: pointer;
+    background-color: red;
+  }

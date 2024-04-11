@@ -72,7 +72,7 @@ nav{
   border: 0.5px solid white;
   border-radius: 40px;
   width: 260px;
- 
+  
 }
 .side_navbar span{
   color: gray;
@@ -87,7 +87,7 @@ nav{
   color: rgb(100, 100, 100);
 }
 .logout{
-  margin-top: 355px;
+  margin-top: 250px;
   /* border-radius: 30px 30px;
   width: 80%;
   font-weight: 500;
@@ -128,93 +128,91 @@ nav{
 .side_navbar .active{
   border-left: 2.5px solid #fe6601;
 }
-
-
-.content1 {
-    flex: 1;
-    overflow-y: scroll;
-    padding: 20px;
-    height: 91vh;
-    
-    
+.service-category {
+  width: 78%;
+  margin-top: 20px;
+  overflow: scroll;
+  height: 88vh;
 }
 
-.content1 header {
-    color: #1a2b3c;
-    font-size: 24px;
-    margin-bottom: 20px;
+table {
+  background: white;
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.overview {
-    display: flex;
-    flex-direction: row;
-    gap: 80px;
-    margin-bottom: 20px;
-    width: 100%;
-    height: auto;
-   justify-content: space-between;
+table th {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+  background-color: #f2f2f2;
+  border-bottom: 2px solid #ddd;
 }
 
-.card1 {
-    width: 100%;
-    height: auto;
-    background-color: white;
-    color: black;
-    padding: 20px;
-
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.card3 {
-    width: 100%;
-    height: auto;
-    background-color: white;
-    color: black;
-    padding: 20px;
-
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.card2{
-    width: 100%;
-    height: auto;
-    background-color: white;
-    color: black;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-h3 {
-    font-size: 20px;
+table td {
+  font-size: 14px;
+  color: rgb(100, 100, 100);
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
-p {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 10px;
+.service-item {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 15px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  position: relative; /* Make position relative for absolute positioning */
 }
 
-.appointment-list {
-    background-color: #ffffff;
-    padding: 10px;
-    border-radius: 10px;
-    height: auto;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #fe66019a;}
-table{
-    /* border: 1px solid black; */
-    width: 100%;
-    height: auto;
-    border-collapse: collapse;
-    text-align: center;
-    
-    
+.service-details {
+  padding: 2px 0;
 }
-table th,td{
-    border-bottom: 0.5px solid black;
-    padding: 5px;
-    border-radius: 10px;    
+
+.service-description {
+  color: rgb(100, 100, 100);
 }
 
 
+.book-now {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: none; /* Initially hide the button */
+  font-size: 14px;
+  border-radius: 5px;
+}
 
+.service-item:hover .book-now {
+  display: inline-block; /* Show the button when hovering over the service item */
+}
+.service-category {
+  width: 78%;
+  margin-top: 20px;
+  overflow: auto; /* Changed to auto to show scrollbar only when necessary */
+  height: 88vh;
+  z-index: 1; /* Ensure the service category div stays above other elements */
+}
+
+.service-item {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 15px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service-item:hover {
+  cursor: pointer;
+  transform: translateY(2px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+.book-now:hover{
+  cursor: pointer;
+}

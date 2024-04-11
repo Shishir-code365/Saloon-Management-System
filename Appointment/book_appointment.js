@@ -94,10 +94,16 @@ for (let hour = 8; hour < 19; hour++) { // 8am to 8pm
     
     const serviceInput = document.getElementById("service");
 
-
+    // Event listener to prevent form submission on Enter key press
     serviceInput.addEventListener('keydown', function(event) {
         if (event.key === "Enter") {
             event.preventDefault(); 
         }
+    });
+    
+    // Event listener to get the selected service
+    serviceInput.addEventListener('change', function(event) {
+        const selectedService = event.target.value;
+        console.log(selectedService); // You can replace console.log with whatever action you want to perform with the selected service
     });
     

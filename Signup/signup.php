@@ -10,6 +10,7 @@ if (isset($_POST['register'])) {
     $email = $_POST['email'];
     $phone = $_POST['phone'];
     $name = $_POST['name2'];
+    
     $hashedPassword = md5($password);
 
     $checkUserSql = "SELECT * FROM user WHERE email = ? OR phone = ? OR username = ?";
@@ -25,9 +26,9 @@ if (isset($_POST['register'])) {
         
     } else {
 
-        $sql = "INSERT INTO user (username, password, email, phone, Name) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO user (username, password, email, phone, Name,original_password) VALUES (?, ?, ?, ?, ?,?)";
         $stmt = $con->prepare($sql);
-        $stmt->bind_param("sssis", $username, $hashedPassword, $email, $phone, $name);
+        $stmt->bind_param("sssiss", $username, $hashedPassword, $email, $phone, $name,$password);
         $stmt->execute();
 
         if ($stmt->affected_rows > 0) {
@@ -49,6 +50,7 @@ if (isset($_POST['register'])) {
               $_SESSION['user_name'] = $row['username'];
               $_SESSION['name'] = $row['Name'];
               $_SESSION['email']= $row['email'];
+              $_SESSION['password']=$row['original_password'];
               $_SESSION['redirect'] = true;
 
                 header("Location: ../Dashboard/user_dash.php");

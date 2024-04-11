@@ -292,7 +292,7 @@ h1 {
 .btn-default:hover{
   background-color:  #fe6601;
   cursor: pointer;
-  transition: background-color 0.25s linear;
+  transition: background-color 0.2s linear;
 }
 .btn-default svg{
   height: 12px;

@@ -168,7 +168,6 @@ text-transform: capitalize;
  margin-bottom: 15px;
  width: 550px;
  height: 50px;
- background-color: #f4f4f4;
  font-size: 15px;
 
 }
@@ -237,7 +236,7 @@ text-transform: capitalize;
   background-color: #f4f4f4;
   font-size: 15px;
 }
-.service input{
+.selectservice {
   border: 1px solid #dbdbdb;
   font-family:"Montserrat", sans-serif;
   border-radius: 10px;
@@ -265,7 +264,7 @@ text-transform: capitalize;
   background-color: #fe6601;
   cursor: pointer;
   
-  transition: background-color 0.25s linear;
+  transition: background-color 0.2s linear;
 }
 .btn-default svg{
   height: 12px;

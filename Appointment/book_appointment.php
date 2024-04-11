@@ -5,6 +5,7 @@ if(!isset($_SESSION['user_id'])){
     header("Location: ../index.php");
 }
 
+
 if($_SERVER['REQUEST_METHOD']=='POST')
 {
   $name = $_POST['name'];
@@ -31,10 +32,10 @@ if($_SERVER['REQUEST_METHOD']=='POST')
   if($exec)
   
   {
-    
+    $appointmentId = mysqli_insert_id($con);
     echo '<script>
             alert("Booked Successfully");
-                window.location.href = "../Dashboard/user_dash.php";
+            window.location.href = "../invoice/invoice.php?appointment_id=' . $appointmentId . '";
           </script>';
     exit();
   }
@@ -81,8 +82,8 @@ if($_SERVER['REQUEST_METHOD']=='POST')
         <a href="../Dashboard/user_dash.php">Dashboard</a>
        <a href="#" class= "active">Book Appointment</a>
         <a href="../Profie/profile.php">Profile</a>
-        <a href="#">Services</a>
-        <a href="#">Invoice</a>
+        <a href="../Service/service.php">Services</a>
+        <a href="../invoice/invoice.php">Invoice</a>
         <a href="#">Feedback</a>
         <button class="logout">Logout <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z" fill= "rgb(100, 100, 100)"/></svg></button>
       </div>
@@ -131,7 +132,28 @@ if($_SERVER['REQUEST_METHOD']=='POST')
   
   <div class="service">
   <label for="service">Service:</label><br>
-  <input type="text" id="service" name="service" required></div>
+  <select id="service" name="service" required style="border-radius: 10px; width: 550px; height: 50px; margin-top: 10px; margin-bottom: 15px; font-size: 15px; background-color: #f4f4f4;text-align: center">
+    <?php
+    $sql = "SELECT service_name, service_price FROM services";
+    $result = mysqli_query($con, $sql);
+    if ($result && mysqli_num_rows($result) > 0) {
+      while ($row = mysqli_fetch_assoc($result)) {
+        $serviceName = $row['service_name'];
+        $servicePrice = $row['service_price'];
+        $selected = '';
+        if (isset($_GET['service']) && $_GET['service'] === $serviceName) {
+          // Pre-select the option if it matches the service name from URL parameter
+          $selected = 'selected';
+        }
+        echo "<option value=\"$serviceName\" $selected>$serviceName (Rs. $servicePrice)</option>";
+      }
+    }
+    ?>
+  </select>
+</div>
+
+
+
   <div class="submit">
   <input type="submit" value="Submit" class="btn btn-default"></div>
 </form>

@@ -42,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $_SESSION['user_name'] = $row['username'];
       $_SESSION['name'] = $row['Name'];
       $_SESSION['email']= $row['email'];
+      $_SESSION['password']=$row['original_password'];
       
         header("Location: ../Dashboard/user_dash.php");
       exit;
