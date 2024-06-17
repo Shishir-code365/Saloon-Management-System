@@ -10,7 +10,7 @@
   font-family: "Poppins", sans-serif;
 }
 body{
-  background: rgb(219, 219, 219);
+  background:#f0f0f0;
   overflow: hidden;
 }
 .header{
@@ -87,12 +87,8 @@ nav{
   color: rgb(100, 100, 100);
 }
 .logout{
-  margin-top: 355px;
-  /* border-radius: 30px 30px;
-  width: 80%;
-  font-weight: 500;
-  font-size: 15px;
-  color: rgb(100, 100, 100); */
+  margin-top: 350px;
+  margin-left: 20px;
   padding: 15px 32px;
   text-decoration: none;
   color: white;
@@ -101,7 +97,6 @@ nav{
   background-color: rgba(0, 0, 0, 0.766);
   border: 1.5 px solid white;
   border-radius: 30px 30px;
-  margin-left: 10px;
 }
 .logout:hover{
   cursor: pointer;
@@ -121,12 +116,14 @@ nav{
 .links a{
   font-size: 13px;
 }
-.side_navbar a:hover{
+.side_navbar a:not(.active):hover{
   background: rgb(235, 235, 235);
   cursor: pointer;
 }
 .side_navbar .active{
-  border-left: 2.5px solid #fe6601;
+  border-left: 2.5px solid teal;
+  background-color: #ffb225;
+  color:#f0f8f8;
 }
 
 
@@ -140,7 +137,7 @@ nav{
 }
 
 .content1 header {
-    color: #1a2b3c;
+
     font-size: 24px;
     margin-bottom: 20px;
 }
@@ -158,31 +155,31 @@ nav{
 .card1 {
     width: 100%;
     height: auto;
-    background-color: white;
+    background-color:#bef8f8;
     color: black;
     padding: 20px;
 
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .card3 {
     width: 100%;
     height: auto;
-    background-color: white;
+    background-color:#bef8f8;
     color: black;
     padding: 20px;
 
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .card2{
     width: 100%;
     height: auto;
-    background-color: white;
+    background-color: #bef8f8;
     color: black;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 h3 {
     font-size: 20px;
@@ -195,12 +192,16 @@ p {
 }
 
 .appointment-list {
-    background-color: #ffffff;
+
     padding: 10px;
     border-radius: 10px;
     height: auto;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: #fe66019a;}
+    background-color:#ffffff; 
+    
+  }
+    
+
 table{
     /* border: 1px solid black; */
     width: 100%;
@@ -208,13 +209,78 @@ table{
     border-collapse: collapse;
     text-align: center;
     
-    
+}
+table th{
+  font-size: 15px;
+}
+
+table td{
+  font-size: 14px;
+  color: rgb(100, 100, 100);
 }
 table th,td{
-    border-bottom: 0.5px solid black;
-    padding: 5px;
-    border-radius: 10px;    
+  padding: 5px;
+    
+}
+.card1,
+.card2,
+.card3 {
+  transition: transform 0.3s ease;
 }
 
+.card1:hover,
+.card2:hover,
+.card3:hover {
+  cursor: pointer;
+  transform: translate(0, -10px);
+}
 
+/* .appointment-list:hover{
+  cursor: pointer;
+  transform: translate(0, -5px);
+} */
+/* tbody tr{
+  transition: transform 0.5s ease, box-shadow 0.4s ease;
+ 
+} */
 
+/* tbody tr:hover{
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px white;
+  cursor: pointer;
+  transform: translate(-4px, 0px);
+  
+} */
+.icon{
+  color: #5d3fd3;
+}
+.change-btn
+{
+  padding: 3px 7px;
+  background-color:#ffb225;
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.change-btn:hover{
+  cursor: pointer;
+  transform: translateX(-1px);
+  box-shadow: 2px 2px 2px black;
+}
+.date {
+
+  display: none;
+}
+.view-button{
+  border: none;
+  margin: none;
+  padding: 5px 10px;
+  background-color: #5D3FD3;
+  
+  color: white;
+  border-radius: 10px;
+  transition: background-color 0.2s ease-in-out;
+}
+.view-button:hover{
+  cursor:pointer;
+  background-color: #21019e;
+}

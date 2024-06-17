@@ -2,24 +2,33 @@
 session_start();
 include "../connection.php"; 
 
-// Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
     echo "Error: User not logged in.";
     exit;
 }
 
-// Get user ID from session
 $user_id = $_SESSION['user_id'];
 
-// Perform deletion query
-$sql = "DELETE FROM user WHERE id = ?";
-$stmt = $con->prepare($sql);
-$stmt->bind_param("i", $user_id);
-$stmt->execute();
+$con->begin_transaction();
 
-if ($stmt->affected_rows > 0) {
-    echo "success"; // Deletion successful
-} else {
-    echo "error"; // Deletion failed
+try {
+
+    $sql_appointments = "DELETE FROM appointment WHERE user_id = ?";
+    $stmt_appointments = $con->prepare($sql_appointments);
+    $stmt_appointments->bind_param("i", $user_id);
+    $stmt_appointments->execute();
+
+    $sql_user = "DELETE FROM user WHERE id = ?";
+    $stmt_user = $con->prepare($sql_user);
+    $stmt_user->bind_param("i", $user_id);
+    $stmt_user->execute();
+
+    $con->commit();
+
+    echo "success"; 
+} catch (Exception $e) {
+
+    $con->rollback();
+    echo "error: " . $e->getMessage(); 
 }
 ?>

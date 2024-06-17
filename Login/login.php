@@ -90,15 +90,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
         <div class="navbar">
           <div class="logo">
-            <img id="img-logo" src="../Images/logo5.jpg" alt="">
+          <img id="img-logo" src="../Images/logo.jpg" alt="">
           </div>
           <div class="items">
           <ul>
+          <ul>
             <li><a href="../index.php">home</a></li>
-            <li><a href="#">archives</a></li>
-            <li><a href="#">tags</a></li>
-            <li><a href="#">categories</a></li>
-            <li><a href="#">about</a></li>
+            <li><a href="../index.php#about">About us</a></li>
+            <li><a href="../index.php#services">Our Services</a></li>
+            <li><a href="../index.php#gallery">Gallery</a></li>
+            <li><a href="../index.php#footer">Contact US</a></li>
+          </ul>
           </ul>
         </div>
           <div class="log-sign">
@@ -113,9 +115,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </button></a>
        </div>
       </div>
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="para">
+          <p><h2>LOG IN NOW </h2>and easily book your appointments, track your history. Enjoy a seamless experience as you plan your next visit to our salon. Your beauty and relaxation are just a click away!</p>
+        </div>
       <form class="flip-card__form" method="POST"
                     action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-      <div class="container">
         <div class="card">
             <a class="login">Log In</a> 
 
@@ -138,12 +144,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ?>
             
             </div>
-            <button type="submit" class="enter">Enter</button>
+            <button type="submit" class="enter">Log In</button>
             <span class="create">Don't have an acount? <a href="../Signup/signup.php" style="text-decoration:none;">Create one</a></span>
           </div>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
 
 <script src="login.js"></script>
 </body>

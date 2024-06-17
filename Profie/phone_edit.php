@@ -26,6 +26,10 @@ else{
     if($stmt->affected_rows > 0)
     {
       echo 1; 
+      $sql2 = "UPDATE appointment SET phone = ? where user_id = ?";
+      $stmt2 = $con->prepare($sql2);
+      $stmt2->bind_param("ii", $data, $id); 
+      $stmt2->execute();
     }
     else{
         echo "NO row affected";

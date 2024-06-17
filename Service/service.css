@@ -10,7 +10,7 @@
   font-family: "Poppins", sans-serif;
 }
 body{
-  background: rgb(219, 219, 219);
+  background: #f0f0f0;
   overflow: hidden;
 }
 .header{
@@ -58,6 +58,7 @@ body{
   margin-top: 10px;
   display: flex;
   gap: 50px;
+  
 }
 
 /* Side menubar section */
@@ -84,15 +85,11 @@ nav{
   padding: 0.8rem 3rem;
   font-weight: 500;
   font-size: 15px;
-  color: rgb(100, 100, 100);
+  color: #333333;
 }
 .logout{
-  margin-top: 250px;
-  /* border-radius: 30px 30px;
-  width: 80%;
-  font-weight: 500;
-  font-size: 15px;
-  color: rgb(100, 100, 100); */
+  margin-top: 350px;
+  margin-left: 20px;
   padding: 15px 32px;
   text-decoration: none;
   color: white;
@@ -101,7 +98,6 @@ nav{
   background-color: rgba(0, 0, 0, 0.766);
   border: 1.5 px solid white;
   border-radius: 30px 30px;
-  margin-left: 10px;
 }
 .logout:hover{
   cursor: pointer;
@@ -121,16 +117,19 @@ nav{
 .links a{
   font-size: 13px;
 }
-.side_navbar a:hover{
+.side_navbar a:not(.active):hover{
   background: rgb(235, 235, 235);
   cursor: pointer;
 }
 .side_navbar .active{
-  border-left: 2.5px solid #fe6601;
+  border-left: 2.5px solid #008080;
+  background-color: #cef7f7;
+  color: #008080;
+  
 }
 .service-category {
   width: 78%;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   overflow: scroll;
   height: 88vh;
 }
@@ -162,9 +161,10 @@ table td {
   border-radius: 10px;
   margin-bottom: 10px;
   padding: 15px;
+  border: 2px solid #DDDDDD;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
-  position: relative; /* Make position relative for absolute positioning */
+  position: relative; 
 }
 
 .service-details {
@@ -176,43 +176,69 @@ table td {
 }
 
 
-.book-now {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 5px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: none; /* Initially hide the button */
-  font-size: 14px;
-  border-radius: 5px;
-}
 
-.service-item:hover .book-now {
-  display: inline-block; /* Show the button when hovering over the service item */
-}
+/* .service-item:hover .book-now {
+  display: inline-block; 
+} */
 .service-category {
   width: 78%;
-  margin-top: 20px;
-  overflow: auto; /* Changed to auto to show scrollbar only when necessary */
+  
+  overflow: auto; 
   height: 88vh;
-  z-index: 1; /* Ensure the service category div stays above other elements */
+  z-index: 1; 
 }
 
 .service-item {
-  background-color: #f2f2f2;
+  background-color: #FFFFFF;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   padding: 15px;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .service-item:hover {
   cursor: pointer;
   transform: translateY(2px);
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); */
+}
+.book-now {
+  background-color: #FF6600;
+  border: none;
+  color: #FFFFFF;
+  padding: 6px 20px;
+  text-align: center;
+  text-decoration: none;
+  /* display: none; */
+  font-size: 14px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; 
+  margin-top: 10px;
 }
 .book-now:hover{
   cursor: pointer;
+
+}
+
+.service-item:hover .book-now {
+  display: inline-block; 
+  opacity: 1;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1; 
+  }
+}
+h2{
+  margin-bottom: 10px;
+}
+.icon {
+  color: #FFA500;
 }

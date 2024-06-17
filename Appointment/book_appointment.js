@@ -55,8 +55,10 @@ for (let hour = 8; hour < 19; hour++) { // 8am to 8pm
     
 
     appointmentDateInput.addEventListener('input', () => {
-          
         const selectedDate = appointmentDateInput.value;
+        const currentDate = new Date();
+        const boundaryTime = new Date(currentDate.getTime() + 30 * 60000);
+        
         $.ajax({
             type: 'post',
             url: 'date_send.php',
@@ -73,7 +75,13 @@ for (let hour = 8; hour < 19; hour++) { // 8am to 8pm
                     } else {
                         timeButtonsContainer.style.display = "grid";
                         buttons.forEach(button => {
-                            if (bookedTimes.includes(button.value)) {
+                            // Get appointment time from button value
+                            const appointmentTime = new Date(selectedDate + ' ' + button.value);
+                            
+                            // Check if appointment time is in the past
+                            if (appointmentTime <=boundaryTime) {
+                                button.style.display = 'none'; // Hide buttons with past appointment times
+                            } else if (bookedTimes.includes(button.value)) {
                                 button.style.display = 'none'; // Hide buttons with booked times
                             } else {
                                 button.style.display = 'block'; // Show buttons with available times
@@ -85,12 +93,10 @@ for (let hour = 8; hour < 19; hour++) { // 8am to 8pm
                         button.style.display = 'block';
                     });
                 }
-            },
-            error: function (xhr, status, error) {
-                console.error(xhr.responseText);
             }
         });
     });
+    
     
     const serviceInput = document.getElementById("service");
 
@@ -104,6 +110,6 @@ for (let hour = 8; hour < 19; hour++) { // 8am to 8pm
     // Event listener to get the selected service
     serviceInput.addEventListener('change', function(event) {
         const selectedService = event.target.value;
-        console.log(selectedService); // You can replace console.log with whatever action you want to perform with the selected service
+        console.log(selectedService); 
     });
     

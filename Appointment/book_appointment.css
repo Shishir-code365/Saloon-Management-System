@@ -11,7 +11,7 @@
   
 }
 body{
-  background: rgb(219, 219, 219);
+  background-color: #F0F0F0;
   overflow: hidden;
 }
 .header{
@@ -86,16 +86,11 @@ nav{
   padding: 0.8rem 3rem;
   font-weight: 500;
   font-size: 15px;
-  color: rgb(100, 100, 100);
+  color: #333333;
 }
 .logout{
-  margin-top: 250px;
-  /* border-radius: 30px 30px;
-  width: 80%;
-  font-weight: 500;
-  font-size: 15px;
-  color: rgb(100, 100, 100);
-  margin-left: 2px; */
+  margin-top: 350px;
+  margin-left: 20px;
   padding: 15px 32px;
   text-decoration: none;
   color: white;
@@ -104,8 +99,6 @@ nav{
   background-color: rgba(0, 0, 0, 0.766);
   border: 1.5 px solid white;
   border-radius: 30px 30px;
-  margin-left: 10px;
-  
 }
   
 .logout:hover{
@@ -131,9 +124,11 @@ nav{
   cursor: pointer;
 }
 .side_navbar .active{
-  border-left: 2.5px solid #fe6601;
+  border-left: 2.5px solid #008080;
+  background-color: #cef7f7;
+  color: #008080;
+  
 }
-
 
 
 .appointment_form{
@@ -157,9 +152,11 @@ label{
 h2{
   margin-left: 70px;
 }
-
+input{
+  border: 1px solid #ccc;
+}
 .name input{
-border: 1px solid #dbdbdb;
+
 text-transform: capitalize;
  font-family:"Montserrat", sans-serif;
  border-radius: 10px;
@@ -169,12 +166,9 @@ text-transform: capitalize;
  width: 550px;
  height: 50px;
  font-size: 15px;
-
 }
 
 .email input{
-  border: 1px solid #dbdbdb;
-  
    font-family:"Montserrat", sans-serif;
    border-radius: 10px;
    padding: 0px 15px;
@@ -182,9 +176,7 @@ text-transform: capitalize;
    margin-bottom: 15px;
    width: 550px;
    height: 50px;
-   background-color: #f4f4f4;
    font-size: 15px;
-   
 }
 .phone input{
   border: 1px solid #dbdbdb;
@@ -196,7 +188,6 @@ text-transform: capitalize;
  margin-bottom: 15px;
  width: 550px;
  height: 50px;
- background-color: #f4f4f4;
  font-size: 15px;
 
 }
@@ -220,7 +211,6 @@ text-transform: capitalize;
   margin-bottom: 15px;
   width: 550px;
   height: 50px;
-  background-color: #f4f4f4;
   font-size: 15px;
  
 }
@@ -233,7 +223,7 @@ text-transform: capitalize;
   margin-bottom: 15px;
   width: 550px;
   height: 50px;
-  background-color: #f4f4f4;
+
   font-size: 15px;
 }
 .selectservice {
@@ -245,9 +235,10 @@ text-transform: capitalize;
   margin-bottom: 15px;
   width: 550px;
   height: 50px;
-  background-color: #f4f4f4;
+ 
   font-size: 15px;
 }
+
 .btn-default{
   padding: 15px 32px;
   text-decoration: none;
@@ -286,6 +277,7 @@ text-transform: capitalize;
 }
 #timeButtons {
   display: grid;
+  
   grid-template-columns: repeat(6, 1fr);
   grid-auto-rows: auto; 
   grid-gap: 10px; 
@@ -301,10 +293,13 @@ text-transform: capitalize;
 #timeButtons button{
   padding: 5px;
   border-radius: 15px 15px;
-  
+  background-color: white;
 }
 #timeButtons{
   display: none;
   margin-bottom: 20px;
 
+}
+.icon {
+  color: #FFA500;
 }

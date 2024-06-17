@@ -81,15 +81,15 @@ if (isset($_POST['register'])) {
     
         <div class="navbar">
           <div class="logo">
-            <img id="img-logo" src="../Images/logo5.jpg" alt="">
+          <img id="img-logo" src="../Images/logo.jpg" alt="">
           </div>
           <div class="items">
           <ul>
-            <li><a href="../index.php">home</a></li>
-            <li><a href="#">archives</a></li>
-            <li><a href="#">tags</a></li>
-            <li><a href="#">categories</a></li>
-            <li><a href="#">about</a></li>
+          <li><a href="../index.php">home</a></li>
+            <li><a href="../index.php#about">About us</a></li>
+            <li><a href="../index.php#services">Our Services</a></li>
+            <li><a href="../index.php#gallery">Gallery</a></li>
+            <li><a href="../index.php#footer">Contact US</a></li>
           </ul>
         </div>
           <div class="log-sign">
@@ -105,6 +105,10 @@ if (isset($_POST['register'])) {
 
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method = "post" onsubmit="return validate_register()" class="form">
         <div class="container2">
+          <div class="para">
+            <p>
+              <h2>SIGN UP</h2> with us to access exclusive benefits and enjoy a streamlined booking experience. Register now to schedule appointments effortlessly, manage your preferences!</p>
+          </div>
         <div class="card2">
             <a class="signup">Sign Up</a>
 
@@ -143,7 +147,7 @@ if (isset($_POST['register'])) {
             </div>
             <span class="phoneError"></span>
 
-            <button class="enter"name="register" type="submit">Enter</button>
+            <button class="enter"name="register" type="submit">Register</button>
 
         </div>
     </div>

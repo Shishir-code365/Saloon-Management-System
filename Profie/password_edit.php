@@ -16,6 +16,7 @@ if(isset($_POST['passwordinput_value']))
 
     if ($stmt->affected_rows > 0) {
         echo 1;
+        
     } else {
 
         echo 0;

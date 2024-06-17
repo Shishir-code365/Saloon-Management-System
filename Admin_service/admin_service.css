@@ -1,0 +1,408 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  background:#f0f0f0;
+  overflow: hidden;
+}
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 20px;
+  background: #fff;
+}
+.logo img{
+  background-size: cover;
+  height: 60px;
+  width: 80px;
+}
+.header-icons svg{
+  height: 20px;
+  width: 20px;
+}
+.header-icons h4{
+  text-transform:capitalize;
+}
+.header-icons{
+  display: flex;
+  align-items: center;
+}
+.header-icons i{
+  margin-right: 2rem;
+  cursor: pointer;
+}
+.header-icons .account{
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 5px;
+}
+.header-icons .account img{
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.container{
+  margin-top: 10px;
+  display: flex;
+  gap: 50px;
+}
+
+/* Side menubar section */
+nav{
+  background: #fff;
+}
+.side_navbar{
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  border: 0.5px solid white;
+  border-radius: 40px;
+  width: 260px;
+ 
+}
+.side_navbar span{
+  color: gray;
+  margin: 1rem 3rem;
+  font-size: 12px;
+}
+.side_navbar a{
+  width: 100%;
+  padding: 0.8rem 3rem;
+  font-weight: 500;
+  font-size: 15px;
+  color: rgb(100, 100, 100);
+}
+.logout{
+  margin-top: 350px;
+  margin-left: 20px;
+  padding: 15px 32px;
+  text-decoration: none;
+  color: white;
+  display: block;
+  width: 200px;
+  background-color: rgba(0, 0, 0, 0.766);
+  border: 1.5 px solid white;
+  border-radius: 30px 30px;
+}
+.logout:hover{
+  cursor: pointer;
+  background-color: black;
+  transition: background-color 0.25s linear;
+}
+.logout svg{
+  height: 12px;
+  width: 12px;
+  
+}
+.links{
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+.links a{
+  font-size: 13px;
+}
+.side_navbar a:not(.active):hover{
+  background: rgb(235, 235, 235);
+  cursor: pointer;
+}
+.side_navbar .active{
+  border-left: 2.5px solid teal;
+  background-color: #ffb225;
+  color:#f0f8f8;
+}
+.service-category {
+    padding: 20px;
+    overflow: scroll;
+    height: 88vh;
+  }
+
+  
+  .service-item {
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    position: relative; 
+  }
+  
+  .service-details {
+    padding: 2px 0;
+  }
+  
+  .service-description {
+    color: rgb(100, 100, 100);
+  }
+  
+ 
+  
+  .service-item:hover .book-now {
+    display: inline-block;
+  }
+  /* .service-category {
+    width: 78%;
+    margin-top: 20px;
+    overflow: auto; 
+    height: 88vh;
+   
+  } */
+
+  
+  .service-item:hover {
+    cursor: pointer;
+    transform: translateY(2px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  
+  
+  /* Define the fadeIn animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0; /* Start from fully transparent */
+    }
+    to {
+      opacity: 1; /* End with full visibility */
+    }
+  }
+  .btn{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .button {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 4px ;
+    background-color: #5d3fd3;
+    margin-top: 20px;
+  }
+  
+  .button, .button__icon, .button__text {
+    transition: all 0.3s;
+  }
+  
+  .button .button__text {
+    transform: translateX(30px);
+    color: #fff;
+
+  }
+  .button__icon{
+   border-radius: 4px;
+  }
+  
+  .button .button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    background-color: #5d3fd3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button .svg {
+    width: 30px;
+    stroke: #fff;
+    border-radius: 4px;
+  }
+  
+  .button:hover {
+    background: white;
+  }
+  
+  .button:hover .button__text {
+    color: transparent;
+  }
+  
+  .button:hover .button__icon {
+    width: 148px;
+    transform: translateX(0);
+  }
+  
+  .button:active .button__icon {
+    background-color: white;
+  }
+  
+  /* .button:active {
+    border: 1px solid white;
+  } */
+
+
+
+
+.service-buttons {
+   
+    margin-top: 10px;
+  }
+
+  /* .service-item:hover .service-buttons {
+    display: block;
+  } */
+  
+  .edit-btn,
+  .delete-btn {
+    background-color: #ffa500;
+    border: none;
+    color: white;
+    padding: 6px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-right: 5px; 
+    opacity: 0; 
+
+    transition: opacity 0.5s ease-in-out, background-color 0.2s ease-in-out;
+  }
+  .edit-btn,.delete-btn:hover{
+    cursor: pointer;
+    background-color: rgb(201, 4, 4);
+  }
+  /* Apply animation when buttons appear */
+  .service-item:hover .edit-btn,
+  .service-item:hover .delete-btn {
+    opacity: 1; 
+    animation: fadeIn 0.5s ease-in-out; 
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0; 
+    }
+    to {
+      opacity: 1; 
+    }
+  }
+  
+  .add-service{
+    
+    height: auto;
+    width: 450px;
+    background-color:#ffb225f5;
+    padding: 10px 10px;
+    translate: 700px 210px;
+    position: fixed;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 1px 3px 13px gray;
+    
+  }
+
+  .sname input{
+    border: 1px solid #dbdbdb;
+    text-transform: capitalize;
+     font-family:"Montserrat", sans-serif;
+     border-radius: 10px;
+     padding: 0px 15px;
+     margin-top: 10px;
+     margin-bottom: 15px;
+     width: 400px;
+     height: 50px;
+     font-size: 15px;
+    
+    }
+    .sprice input{
+        border: 1px solid #dbdbdb;
+        text-transform: capitalize;
+         font-family:"Montserrat", sans-serif;
+         border-radius: 10px;
+         padding: 0px 15px;
+         margin-top: 10px;
+         margin-bottom: 15px;
+         width: 400px;
+         
+         height: 50px;
+         font-size: 15px;
+        
+        }
+
+  .sdescription input{
+    border: 1px solid #dbdbdb;
+     font-family:"Montserrat", sans-serif;
+     border-radius: 10px;
+     padding: 0px 15px;
+     margin-top: 10px;
+     margin-bottom: 15px;
+     width: 400px;
+     height: 50px;
+     font-size: 15px;
+    
+    }
+    .sname,.sprice,.sdescription{
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+    form{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .add-btn{
+      display: flex;
+        justify-content: center;
+    }
+    .add{
+        
+        padding: 8px 42px;
+        color: white;
+        display: block;
+        
+        border-radius: 30px 30px;
+        background-color:#7350fefa;
+        transition: background-color 0.3s ease;
+    }
+  .add:hover{
+    cursor: pointer;
+    background-color:#563bc4;
+  }
+.full-screen{
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  z-index: 1;
+  position: fixed;
+  display: none;
+}
+.exit{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 21px;
+  width: 21px;
+  background-color: gray;
+  border-radius: 50%;
+ transform: translate(417px,-9px);
+ -webkit-user-select: none;
+ -moz-user-select: none;
+}
+.exit:hover{
+  cursor: pointer;
+  color: white;
+  background-color: black;
+}
+.icon{
+  color: #5d3fd3;
+}

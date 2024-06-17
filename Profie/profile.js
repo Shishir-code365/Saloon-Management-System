@@ -2,6 +2,11 @@ const logout = document.querySelector('.logout');
 logout.addEventListener('click',function(){
     window.location.href = '../logout/logout.php';
 })
+window.onload = function() {
+    initialPhone = document.getElementById('phoneinput').value;
+    initialEmail = document.getElementById('emailinput').value;
+    initialUsername = document.getElementById('usernameinput').value;
+};
 
 const error = document.querySelector('.errormsg');
 const success_name = document.querySelector('.success_name');
@@ -17,7 +22,6 @@ const error_password = document.querySelector('.errormsg_password');
 
 const success_phone = document.querySelector('.success_phone');
 const error_phone = document.querySelector('.errormsg_phone');
-
 
 
 
@@ -50,6 +54,7 @@ const phoneinput = document.getElementById('phoneinput');
         done.style.display = 'inline';
         nameinput.style.color = 'black';
         nameinput.style.cursor = 'text';
+        nameinput.style.border = '1px solid black';
         nameinput.removeAttribute('readonly');
         nameinput.focus();
         nameinput.selectionStart = nameinput.selectionEnd = nameinput.value.length;
@@ -79,6 +84,7 @@ const phoneinput = document.getElementById('phoneinput');
             error.style.display = "none";
             nameinput.style.cursor = 'default';
             nameinput.setAttribute('readonly','true');
+            nameinput.style.border = '';
             edit.style.display = 'inline';
             done.style.display = 'none';
             nameinput.style.color = 'gray';
@@ -118,6 +124,7 @@ const phoneinput = document.getElementById('phoneinput');
         done2.style.display = 'inline';
         emailinput.style.color = 'black';
         emailinput.style.cursor = 'text';
+        emailinput.style.border = '1px solid black';
         emailinput.removeAttribute('readonly');
         emailinput.focus();
         emailinput.selectionStart = emailinput.selectionEnd = emailinput.value.length;
@@ -134,6 +141,7 @@ const phoneinput = document.getElementById('phoneinput');
             
             emailinput.style.cursor = 'default';
             error_email.style.display = "none";
+             
             emailinput.setAttribute('readonly', 'true');
             edit2.style.display = 'inline';
             done2.style.display = 'none';
@@ -195,6 +203,7 @@ const phoneinput = document.getElementById('phoneinput');
                             msg.style.marginLeft="20px";
                             msg.style.fontSize="small";
                             msg.innerHTML = "E-mail updated successfully!!";
+                            emailinput.style.border = '';
                             success_email.appendChild(msg);
                             success_email.classList.add('fade-in');
                             setTimeout(function() {
@@ -211,6 +220,7 @@ const phoneinput = document.getElementById('phoneinput');
             emailinput.style.cursor = 'default';
             error_email.style.display = "none";
             emailinput.setAttribute('readonly', 'true');
+            emailinput.style.border = '';
             edit2.style.display = 'inline';
             done2.style.display = 'none';
             emailinput.style.color = 'gray';
@@ -224,6 +234,7 @@ const phoneinput = document.getElementById('phoneinput');
         done3.style.display = 'inline';
         usernameinput.style.color = 'black';
         usernameinput.style.cursor = 'text';
+        usernameinput.style.border = '1px solid black';
         usernameinput.removeAttribute('readonly');
         usernameinput.focus();
         usernameinput.selectionStart = usernameinput.selectionEnd = usernameinput.value.length;
@@ -273,6 +284,7 @@ const phoneinput = document.getElementById('phoneinput');
                         msg.style.marginLeft="20px";
                         msg.style.fontSize="small";
                         msg.innerHTML = "Username updated successfully!!";
+                        usernameinput.style.border = '';
                         success_username.appendChild(msg);
                         success_username.classList.add('fade-in');
                         setTimeout(function() {
@@ -288,6 +300,7 @@ const phoneinput = document.getElementById('phoneinput');
             usernameinput.style.cursor = 'default';
             error_username.style.display="none";
             usernameinput.setAttribute('readonly','true');
+            usernameinput.style.border = '';
             edit3.style.display = 'inline';
             done3.style.display = 'none';
             usernameinput.style.color = 'gray';
@@ -314,6 +327,7 @@ const phoneinput = document.getElementById('phoneinput');
         done4.style.display = 'inline';
         passwordinput.style.color = 'black';
         passwordinput.style.cursor = 'text';
+        passwordinput.style.border = '1px solid black';
         passwordinput.removeAttribute('readonly');
         passwordinput.focus();
         passwordinput.selectionStart = passwordinput.selectionEnd = passwordinput.value.length;
@@ -326,6 +340,7 @@ const phoneinput = document.getElementById('phoneinput');
             error_password.style.display = "none";
             passwordinput.style.cursor = 'default';
             passwordinput.setAttribute('readonly','true');
+            passwordinput.style.border = '';
             edit4.style.display = 'inline';
             done4.style.display = 'none';
             passwordinput.style.color = 'gray';
@@ -370,15 +385,13 @@ edit5.addEventListener('click', function() {
     phoneinput.style.color = 'black';
     phoneinput.style.cursor = 'text';
     phoneinput.removeAttribute('readonly');
+    phoneinput.style.border = '1px solid black';
     phoneinput.focus();
     phoneinput.selectionStart = phoneinput.selectionEnd = phoneinput.value.length;
 });
 
 let initialPhone;
-window.onload = function() {
-    initialPhone = document.getElementById('phoneinput').value;
-    initialEmail = document.getElementById('emailinput').value;
-};
+
 
 done5.addEventListener('click', function() {
     const phoneinput = document.getElementById('phoneinput');
@@ -408,6 +421,7 @@ done5.addEventListener('click', function() {
             edit5.style.display = "none";
             done5.style.display = "inline";
             phoneinput.removeAttribute('readonly');
+            
             phoneinput.style.color = "black";
         }
         else{
@@ -435,6 +449,7 @@ done5.addEventListener('click', function() {
                         error_phone.appendChild(msg);
                         phoneinput.removeAttribute('readonly');
                         phoneinput.style.color= 'black';
+                        
                         done5.style.display = 'inline';
                         edit5.style.display = 'none';
                         
@@ -447,6 +462,7 @@ done5.addEventListener('click', function() {
                         msg.style.marginLeft="20px";
                         msg.style.fontSize="small";
                         msg.innerHTML = "Phone number updated successfully!!";
+                        phoneinput.style.border = '';
                         success_phone.appendChild(msg);
                         success_phone.classList.add('fade-in');
                         setTimeout(function() {
@@ -465,6 +481,7 @@ done5.addEventListener('click', function() {
         phoneinput.setAttribute('readonly', 'true');
         edit5.style.display = 'inline';
         done5.style.display = 'none';
+        phoneinput.style.border = '';
         phoneinput.style.color = 'gray';
     }
 });

@@ -3,11 +3,13 @@ session_start();
 include "../connection.php";
 if(!isset($_SESSION['user_id'])){
     header("Location: ../index.php");
+
 }
 
 
 if($_SERVER['REQUEST_METHOD']=='POST')
 {
+  $userid = $_SESSION['user_id'];
   $name = $_POST['name'];
   $email = $_POST['email'];
   $phone = $_POST['mobileNumber'];
@@ -25,7 +27,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
             alert("*Another appointment already booked on the same date and same time!");</script>';
   }
   else{
-    $sql = "insert into appointment (name,email,phone,gender,appointment_date,appointment_time,service) values('$name','$email','$phone','$gender','$appointmentDate','$appointmentTime','$service')";
+    $sql = "insert into appointment (name,email,phone,gender,appointment_date,appointment_time,service,user_id,status) values('$name','$email','$phone','$gender','$appointmentDate','$appointmentTime','$service','$userid','unpaid')";
   
   $exec = mysqli_query($con,$sql);
  
@@ -35,7 +37,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
     $appointmentId = mysqli_insert_id($con);
     echo '<script>
             alert("Booked Successfully");
-            window.location.href = "../invoice/invoice.php?appointment_id=' . $appointmentId . '";
+            window.location.href = "../Dashboard/user_dash.php";
           </script>';
     exit();
   }
@@ -79,12 +81,10 @@ if($_SERVER['REQUEST_METHOD']=='POST')
     <nav>
       <div class="side_navbar">
         <span>Main Menu</span>
-        <a href="../Dashboard/user_dash.php">Dashboard</a>
-       <a href="#" class= "active">Book Appointment</a>
-        <a href="../Profie/profile.php">Profile</a>
-        <a href="../Service/service.php">Services</a>
-        <a href="../invoice/invoice.php">Invoice</a>
-        <a href="#">Feedback</a>
+        <a href="../Dashboard/user_dash.php"><i class="fas fa-home icon"></i>&nbsp;Dashboard</a>
+       <a href="#" class= "active"><i class="fas fa-calendar-alt icon"></i>&nbsp;Book Appointment</a>
+        <a href="../Profie/profile.php"><i class="fas fa-user icon"></i>&nbsp;Profile</a>
+        <a href="../Service/service.php"><i class="fas fa-scissors icon"></i>&nbsp;Services</a>
         <button class="logout">Logout <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z" fill= "rgb(100, 100, 100)"/></svg></button>
       </div>
     </nav>
@@ -105,14 +105,14 @@ if($_SERVER['REQUEST_METHOD']=='POST')
   ?>
   
   <div class="name">
-  <label for="name">Name:</label><br>
-  <input type="text" id="name" name="name" value="<?php echo $user_row['username'];?>" required></div>
+  <label for="name">UserName:</label><br>
+  <input type="text" id="name" name="name" value="<?php echo $user_row['username'];?>" required readonly></div>
   <div class="email">
   <label for="email">Email:</label><br>
-  <input type="email" id="email" name="email" value="<?php echo $user_row['email'];?>" required></div>
+  <input type="email" id="email" name="email" value="<?php echo $user_row['email'];?>" required readonly></div>
   <div class="phone">
   <label for="mobileNumber">Mobile Number:</label><br>
-  <input type="tel" id="mobileNumber" name="mobileNumber" value="<?php echo $user_row['phone'];?>" required></div>
+  <input type="tel" id="mobileNumber" name="mobileNumber" value="<?php echo $user_row['phone'];?>" required readonly></div>
   <label for="gender">Gender:</label><br>
   <div class="gender">
   <div class="male">
@@ -132,7 +132,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
   
   <div class="service">
   <label for="service">Service:</label><br>
-  <select id="service" name="service" required style="border-radius: 10px; width: 550px; height: 50px; margin-top: 10px; margin-bottom: 15px; font-size: 15px; background-color: #f4f4f4;text-align: center">
+  <select id="service" name="service" required style="border-radius: 10px; width: 550px; height: 50px; margin-top: 10px; margin-bottom: 15px; font-size: 15px; background-color: white;text-align: center; border: 1px solid #ccc;">
     <?php
     $sql = "SELECT service_name, service_price FROM services";
     $result = mysqli_query($con, $sql);
@@ -142,7 +142,6 @@ if($_SERVER['REQUEST_METHOD']=='POST')
         $servicePrice = $row['service_price'];
         $selected = '';
         if (isset($_GET['service']) && $_GET['service'] === $serviceName) {
-          // Pre-select the option if it matches the service name from URL parameter
           $selected = 'selected';
         }
         echo "<option value=\"$serviceName\" $selected>$serviceName (Rs. $servicePrice)</option>";
@@ -155,7 +154,7 @@ if($_SERVER['REQUEST_METHOD']=='POST')
 
 
   <div class="submit">
-  <input type="submit" value="Submit" class="btn btn-default"></div>
+  <input type="submit" value="Book"class="btn btn-default"></div>
 </form>
 </div>
 </div>

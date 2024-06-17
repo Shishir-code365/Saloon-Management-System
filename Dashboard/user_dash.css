@@ -10,7 +10,8 @@
   font-family: "Poppins", sans-serif;
 }
 body{
-  background: rgb(219, 219, 219);
+  /* background: rgb(219, 219, 219); */
+  background-color: #F0F0F0;
   overflow: hidden;
 }
 .header{
@@ -62,14 +63,15 @@ body{
 
 /* Side menubar section */
 nav{
-  background: #fff;
+  /* background: #fff; */
+  background-color: #FAFAFA;
 }
 .side_navbar{
   padding: 1px;
   display: flex;
   flex-direction: column;
   height: 90vh;
-  border: 0.5px solid white;
+  /*   */
   border-radius: 40px;
   width: 260px;
  
@@ -84,15 +86,12 @@ nav{
   padding: 0.8rem 3rem;
   font-weight: 500;
   font-size: 15px;
-  color: rgb(100, 100, 100);
+  /* color: rgb(100, 100, 100); */
+  color: #333333;
 }
 .logout{
-  margin-top: 250px;
-  /* border-radius: 30px 30px;
-  width: 80%;
-  font-weight: 500;
-  font-size: 15px;
-  color: rgb(100, 100, 100); */
+  margin-top: 350px;
+  margin-left: 20px;
   padding: 15px 32px;
   text-decoration: none;
   color: white;
@@ -120,12 +119,16 @@ nav{
 .links a{
   font-size: 13px;
 }
-.side_navbar a:hover{
+.side_navbar a:not(.active):hover{
   background: rgb(235, 235, 235);
   cursor: pointer;
 }
+
 .side_navbar .active{
-  border-left: 2.5px solid #fe6601;
+  border-left: 2.5px solid #008080;
+  background-color: #cef7f7;
+  color: #008080;
+  
 }
 
 /* Main Body Section */
@@ -143,19 +146,43 @@ nav{
   margin-top: 10px;
   border-radius: 8px;
   padding: 0.5rem 1rem 1rem 3rem;
-  background: rgb(37, 37, 37);
+  /* background: rgb(37, 37, 37); */
+  background-color: #5D3FD3;
   /* background: rgba(202, 104, 0, 0.79) */
 }
 .promo_card h1, .promo_card span, button{
   margin: 10px;
 }
 .promo_card button{
+  background-color: white; 
+  color:black;
   display: block;
   padding: 6px 12px;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
+  
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+.promo_card button:hover{
+  background-color:rgb(252, 207, 124);
+  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.promo_card button i{
+  color:black;
+}
+.promo_card button:focus {
+  outline: none; 
+  box-shadow: 0 0 0 3px rgba(255, 111, 97, 0.5);
 }
 .list1{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 98%;
+}
+.list2{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -180,7 +207,7 @@ table th{
   font-size: 15px;
 }
 table td{
-  font-size: 13px;
+  font-size: 14px;
   color: rgb(100, 100, 100);
 }
 table th,td{
@@ -189,4 +216,98 @@ table th,td{
 }
 .book_appointment{
   display: none;
+}
+.view-button{
+  border: none;
+  margin: none;
+  padding: 5px 10px;
+  background-color: #5D3FD3;
+  
+  color: white;
+  border-radius: 10px;
+  transition: background-color 0.2s ease-in-out;
+}
+.view-button:hover{
+  cursor:pointer;
+  background-color: #21019e;
+}
+.delete-button{
+  border: none;
+  margin: none;
+
+  padding: 5px 5px;
+  /* background-color: rgba(250, 57, 57, 0.716); */
+  background-color: #FFA500;
+  color: black;
+  border-radius: 10px;
+  transition: background-color 0.2s ease-in-out, color 0.35s ease-in-out;
+}
+
+
+.delete-button:hover{
+  cursor:pointer;
+  background-color: rgb(201, 4, 4);
+  color: white;
+}
+#del{
+  color: black;
+  transition: color 0.35s ease-in-out;
+}
+.delete-button:hover #del {
+  color: white !important;
+}
+
+
+.status svg{
+  vertical-align: middle;
+  height: 13px;
+  width: 13x;
+}
+.unpaid{
+  color: #e60000;
+}
+.paid{
+  color:#00cc00;
+}
+
+#filterForm{
+  margin-bottom: 10px;
+
+display: flex;
+align-items: center;
+gap: 8px;
+}
+#filterButton {
+  margin-left:4%;
+}
+#filterButton svg{
+  height: 11px;
+  width: 11px;
+}
+#filterButton{
+  border-radius: 10px;
+  width: 15%;
+  padding: 8px 10px;
+  color: white;
+  background-color: #5D3FD3;
+  float: right;
+  transition: background-color 0.3s ease;
+}
+#filterButton:hover{
+  cursor: pointer;
+  
+  background-color: #3367D6;
+}
+#dateFilter{
+width: 13%;
+border-radius: 10px;
+padding: 8px 10px;
+border: 1.5px solid #008080;
+
+}
+#dateFilter:hover{
+cursor: pointer;
+}
+.icon {
+  color: #FFA500;
 }

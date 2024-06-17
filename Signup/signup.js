@@ -11,6 +11,7 @@ function validate_register()
     nameError.style.display = "none";
     phoneError.style.display = "none";
     passError.style.display = "none";
+    emailError.style.display = "none";
        
         const name = document.querySelector('.name').value;
         const password = document.querySelector('.password').value;
@@ -41,8 +42,17 @@ function validate_register()
             phoneError.style.display = "inline";
             phoneError.innerHTML="";
             const PhoneMsg = document.createElement('p');
-            PhoneMsg.innerHTML = "*Must start from 98 and must be of 10 digit";
+            PhoneMsg.innerHTML = "*Must start from 9 and must be of 10 digit";
             phoneError.appendChild(PhoneMsg);
+            return false;
+        }
+        if(!validateEmail(email)){
+            
+            emailError.style.display = "inline";
+            emailError.innerHTML="";
+            const EmailMsg = document.createElement('p');
+           EmailMsg.innerHTML = "*Invalid Email";
+            emailError.appendChild(EmailMsg);
             return false;
         }
        return true;
@@ -52,7 +62,7 @@ function validate_register()
 
 function validateEmail(email) {
     // Email validation regex
-    var emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    var emailRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
     
     return emailRegex.test(email);
 }

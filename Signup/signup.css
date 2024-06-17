@@ -1,37 +1,44 @@
 /* @import url(https://fonts.googleapis.com/css?family=Lato); */
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 * {
   margin: 0px;
   padding: 0px;
+  font-family: "Poppins", sans-serif;
 }
+
 
 body {
-  
-  background-color: #c9c9c9;
+  background: linear-gradient(to bottom, #f0f0f0, #ffffff);
+
+  /* background-color: #c9c9c9; */
 
 }
 
-.navbar {
-  background-color: #ffffff;
+.navbar{
+
+  
+  background-color:#5d3fd336;
   /* background: rgb(113,0,0);
 background: radial-gradient(circle, rgba(113,0,0,1) 29%, rgba(0,0,0,1) 100%); */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
-  padding: 10px 43px;
+  height: 50px;
+  /* width: 100%; */
+  padding: 10px 5px;
+
+  /* font-size: 17px; */
   font-family: "Montserrat", sans-serif;
-  text-rendering: optimizeLegibility;
+text-rendering: optimizeLegibility;
+scroll-behavior: smooth;
+}
+
+
+#img-logo{
+  width: 200px;
+  height: 70px;
  
-
 }
-
-
-#img-logo {
-  width: 461px;
-  height: 82px;
-}
-
 ul {
   display: flex;
   flex-direction: row;
@@ -209,10 +216,10 @@ ul {
   background-position: center;
   display: flex;
   align-items:center;
-  justify-content: center;
+  justify-content: space-around;
   /* float: right; */
   font-family: Lato, sans-serif;
-  background-image: url(../Images/Salon3\ \(1\).jpg);
+  background: url('../Images/pikaso_texttoimage_Mature-Caucasian-male-barber-with-short-dark-hair-.jpeg') no-repeat center center fixed;
   background-size:cover;
   width: 100%;
 
@@ -344,26 +351,38 @@ ul {
   }
 }
 .nameError{
-  color: rgb(162, 0, 0);
+  color: red;
   font-size: 15px;
   display: none;
 }
 .passError{
-  color: rgb(162, 0, 0);
+  color:  red;
   font-size: 15px;
   display: none;
 }
 .emailError{
-  color: rgb(162, 0, 0);
+  color: red;
   font-size: 15px;
   display: none;
 }
 .phoneError{
-  color: rgb(162, 0, 0);
+  color:  red;
   font-size: 15px;
   display: none;
 }
 .cantsubmit{
-  color: rgb(162, 0, 0);
+  color:  red;
   font-size: 15px;
+}
+.para{
+  width: 620px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  font-size: 26px;
+  font-weight: 100;
+}
+.para h2{
+  color: #fb7e2a;
 }

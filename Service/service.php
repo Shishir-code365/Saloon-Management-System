@@ -45,23 +45,22 @@ if($query)
       <div class="side_navbar">
         <span>Main Menu</span>
 
-       <a href="../Dashboard/user_dash.php">Dashboard</a>
-       <a href="../Appointment/book_appointment.php">Book Appointment</a>
-        <a href="../Profie/profile.php">Profile</a>
-        <a href="#"class="active">Services</a>
-        <a href="../invoice/invoice.php">Invoice</a>
-        <a href="#">Feedback</a>
+       <a href="../Dashboard/user_dash.php"><i class="fas fa-home icon"></i>&nbsp;Dashboard</a>
+       <a href="../Appointment/book_appointment.php"><i class="fas fa-calendar-alt icon"></i>&nbsp;Book Appointment</a>
+        <a href="../Profie/profile.php"><i class="fas fa-user icon"></i>&nbsp;Profile</a>
+        <a href="#"class="active"><i class="fas fa-scissors icon"></i>&nbsp;Services</a>
         <button class="logout">Logout <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224 192 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l210.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32L96 32C43 32 0 75 0 128L0 384c0 53 43 96 96 96l64 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32l0-256c0-17.7 14.3-32 32-32l64 0z" fill= "rgb(100, 100, 100)"/></svg></button>
 
       </div>
     </nav>
    
 <div class="service-category">
+  <h2>Services</h2>
   <?php 
   $sql = "SELECT * FROM services";
   $res = mysqli_query($con, $sql);
   if($res && mysqli_num_rows($res) > 0) {
-    $i = 1; // Initialize $i outside the loop
+    $i = 1;
     while ($row = mysqli_fetch_assoc($res)) {
       $servicename = $row["service_name"];
       $serviceprice = $row["service_price"];
@@ -69,13 +68,13 @@ if($query)
 
       echo "<div class='service-item'>
         <div class='service-details'>
-          <div class='service-number'>$i. $servicename (Rs. $serviceprice)</div>
-          <div class='service-description'>$servicedescription</div>
-          <button class='book-now' onclick=\"redirectToBookAppointment('$servicename')\">Book Now</button>
+          <div class='service-number'style='color: #333333'>$i. $servicename (Rs. $serviceprice)</div></br>
+          <div class='service-description'style='color: #777777'>$servicedescription</div>
+          <button class='book-now' onclick=\"redirectToBookAppointment('$servicename')\"><i class='fas fa-calendar icon' style='color: white'></i>&nbsp;Book Now</button>
         </div>
       </div>";
 
-      $i++; // Increment $i for each iteration
+      $i++; 
     }
   } 
   ?>
