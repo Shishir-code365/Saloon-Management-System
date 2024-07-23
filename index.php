@@ -139,5 +139,5 @@ Our main focus is on quality and hygiene. Our Parlour is well equipped with adva
   </footer>
   </section>
 </body>
-<script src="index.js"></script>
+<script src="landing.js"></script>
 </html>
