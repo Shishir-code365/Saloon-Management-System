@@ -27,7 +27,7 @@ if(isset($_SESSION['redirect'])&&($_SESSION['redirect'])==true){
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 </head>
 <body>
-<embed src="yourfile.pdf" type="application/pdf" width="100%" height="600px" />
+<!-- <embed src="yourfile.pdf" type="application/pdf" width="100%" height="600px" /> -->
   <header class="header">
     <!-- <div class="logo">
      <img src="../Images/4992262.jpg" alt="">
